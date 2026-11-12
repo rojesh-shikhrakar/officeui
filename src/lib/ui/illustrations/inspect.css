@@ -1,0 +1,70 @@
+/* Shared look for the "inspect" illustrations: a UI piece tilted back like a selection in a design tool. */
+.ui-insp {
+	position: relative;
+	width: 680px;
+	max-width: 100%;
+	aspect-ratio: 894 / 480;
+	overflow: hidden;
+	perspective: 900px;
+	font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+	container-type: inline-size;
+	-webkit-mask: radial-gradient(75% 85% at 55% 45%, #000 60%, transparent 95%);
+	mask: radial-gradient(75% 85% at 55% 45%, #000 60%, transparent 95%);
+}
+.ui-insp__plane {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 60cqw;
+	transform: translate(-45%, -55%) rotateX(28deg) rotateZ(-6deg) rotateY(14deg) skewX(-6deg);
+	transform-style: preserve-3d;
+	transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ui-insp:hover .ui-insp__plane {
+	transform: translate(-45%, -55%) rotateX(20deg) rotateZ(-4deg) rotateY(10deg) skewX(-4deg);
+}
+.ui-insp__ghost {
+	opacity: 0.35;
+	filter: blur(0.4px);
+}
+.ui-insp__sel {
+	position: relative;
+	outline: 1.5px solid #3b82f6;
+	background: repeating-linear-gradient(135deg, rgba(59, 130, 246, 0.07) 0 3px, transparent 3px 7px);
+}
+.ui-insp__tag {
+	position: absolute;
+	font-size: 1.4cqw;
+	line-height: 1;
+	padding: 0.4cqw 0.7cqw;
+	border-radius: 0.5cqw;
+	background: #3b82f6;
+	color: #fff;
+	white-space: nowrap;
+}
+.ui-insp__tag[data-tone='red'] {
+	background: #f87171;
+}
+.ui-insp__tag[data-tone='soft'] {
+	background: rgba(59, 130, 246, 0.25);
+	color: #2563eb;
+}
+.ui-insp__guide {
+	position: absolute;
+	border-left: 1px dashed #f87171;
+}
+.ui-insp__cursor {
+	position: absolute;
+	font-size: 2.6cqw;
+	animation: ui-insp-c 4s ease-in-out infinite;
+}
+@keyframes ui-insp-c {
+	50% {
+		transform: translate(-1.5cqw, 0.8cqw);
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.ui-insp__cursor {
+		animation: none;
+	}
+}

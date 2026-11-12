@@ -1,0 +1,116 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design System/Overview" />
+
+# Design system
+
+OfficeUI is built around a small, opinionated design language: a few **core tokens**, clear semantic intent, and reusable component patterns. The goal is consistent UI without making every screen feel rigid or template-driven.
+
+Every piece in this library reads **design tokens**, CSS variables organised in three tiers. A piece looks right with no tokens at all; tokens let you theme the whole library at once.
+
+<table>
+  <thead>
+    <tr>
+      <th>Tier</th>
+      <th>Prefix</th>
+      <th>What it holds</th>
+      <th>Who uses it</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1. Primitives</td>
+      <td>`--p-*`</td>
+      <td>Raw values: stone/obsidian neutrals, accent hues, a 4px spacing scale, one radius family, type tracking, easing curves</td>
+      <td>Only tier 2</td>
+    </tr>
+    <tr>
+      <td>2. Semantic</td>
+      <td>`--ds-*`</td>
+      <td>Meaning: `--ds-surface`, `--ds-surface-elevated`, `--ds-text-muted`, `--ds-border-subtle`, `--ds-accent`, `--ds-focus-halo`, `--ds-elevation-1…3`</td>
+      <td>Your app, and tier 3</td>
+    </tr>
+    <tr>
+      <td>3. Component</td>
+      <td>`--aui-*`</td>
+      <td>What each piece reads: `--aui-ink`, `--aui-surface`, `--aui-border`, `--aui-radius`, `--aui-focus`…</td>
+      <td>The library pieces</td>
+    </tr>
+  </tbody>
+</table>
+
+All tokens live in `src/lib/ui/tokens.css`. Dark mode only remaps tier 2 (on `.dark` or `[data-theme="dark"]`).
+
+## Turning it on
+
+```html
+<html data-ds data-theme="light">
+```
+
+`data-ds` binds tier 3 to tier 2, so every piece follows your semantic tokens. Try it with the **Tokens**, **Accent**, **Radius** and **Theme** buttons in the Storybook toolbar.
+
+```css
+/* Your brand, in one place */
+:root {
+  --ds-accent: #5e3ee0;
+  --ds-radius-control: 10px;
+  --ds-font: 'Inter', system-ui, sans-serif;
+}
+```
+
+## The premium look, built in
+
+- **No pure black or white surfaces.** Off-white stone (`--p-stone-0/50`) and obsidian (`--p-stone-900/950`) layers; surfaces are separated by tone, not heavy borders.
+- **Micro-elevation.** `--ds-elevation-*` combines a 0.5px hairline ring with low-opacity ambient shadows; dark mode adds a faint top highlight.
+- **Glowing focus.** `--ds-focus-halo` is a soft accent halo instead of the browser outline.
+- **Weighty motion.** `--p-ease-out: cubic-bezier(0.16, 1, 0.3, 1)` with 150–250ms durations; press states scale to 0.97–0.98. Every animation respects `prefers-reduced-motion`.
+- **One radius family.** 6 / 8 / 12 / 16 / 18px – pick per role (`--ds-radius-control`, `-card`, `-panel`), never mix ad hoc.
+- **Type.** Inter, tight tracking on display sizes (`--p-tracking-display`), slightly loose tracking on uppercase micro-labels (`--p-tracking-label`).
+- **Soft tints for status.** Badges and pills use a 10–15% tint of their colour with the full colour as text, never neon fills.
+
+## Do's and don'ts
+
+<table>
+  <thead>
+    <tr>
+      <th>Do</th>
+      <th>Don't</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Theme with tier 2 (`--ds-*`)</td>
+      <td>Override `--aui-*` per component unless you mean that one piece</td>
+    </tr>
+    <tr>
+      <td>Use one radius role per element type</td>
+      <td>Mix 4px and 16px corners on neighbouring elements</td>
+    </tr>
+    <tr>
+      <td>Separate surfaces with tone and a hairline</td>
+      <td>Use 2px grey dividers</td>
+    </tr>
+    <tr>
+      <td>Keep line length under ~70 characters in body copy</td>
+      <td>Stretch paragraphs across wide cards</td>
+    </tr>
+    <tr>
+      <td>Use the 4px spacing scale, generous padding</td>
+      <td>Invent one-off values like 13px gaps</td>
+    </tr>
+    <tr>
+      <td>Keep icons at 1.1–1.7 stroke, round caps</td>
+      <td>Mix filled and outlined icon styles in one row</td>
+    </tr>
+    <tr>
+      <td>Desaturate or grade photos consistently</td>
+      <td>Mix full-colour and muted imagery in one grid</td>
+    </tr>
+  </tbody>
+</table>
+
+## Testing
+
+- `bun run test` runs every story as a test: the **play** functions check interactions (clicks, typing, keyboard), and every story is compared with a stored **screenshot** (visual test).
+- `bun run test:update` refreshes the stored screenshots after an intended visual change.
+- `bun run lint:svelte` runs the Svelte MCP autofixer over every component.

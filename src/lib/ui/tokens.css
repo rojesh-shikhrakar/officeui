@@ -1,0 +1,172 @@
+/*
+ * Design system tokens – three tiers.
+ *
+ * 1. Primitives  (--p-*)      raw values: palettes, spacing steps, radii, shadows, easing.
+ *                             Never used by components directly.
+ * 2. Semantic    (--ds-*)     meaning: surface, text, border, accent, focus halo, elevation.
+ *                             Dark mode only remaps this tier.
+ * 3. Component   (--aui-*)    what every library piece reads (each has its own fallback, so a
+ *                             piece looks right with no tokens at all). Put `data-ds` on any
+ *                             ancestor (e.g. <html>) to bind tier 3 to tier 2 and theme everything.
+ *
+ * Customise by overriding tier 1 or tier 2 – never tier 3 per component unless you mean it.
+ */
+
+:root {
+	/* ---------- 1. Primitives ---------- */
+	/* Neutrals: off-white stone to obsidian, never pure #000 / #fff for big surfaces */
+	--p-stone-0: #fdfdfc;
+	--p-stone-25: #fafaf9;
+	--p-stone-50: #f6f6f5;
+	--p-stone-100: #efefee;
+	--p-stone-200: #e5e5e4;
+	--p-stone-300: #d4d4d2;
+	--p-stone-400: #a3a3a1;
+	--p-stone-500: #737372;
+	--p-stone-600: #525251;
+	--p-stone-700: #3a3a39;
+	--p-stone-800: #262627;
+	--p-stone-850: #1c1c1e;
+	--p-stone-900: #151517;
+	--p-stone-950: #0c0c0d;
+	--p-ink: #0a0a0a;
+
+	--p-blue-500: #0060e2;
+	--p-blue-400: #4f8ff7;
+	--p-azure-500: #1d93d2;
+	--p-green-600: #1e8a4f;
+	--p-green-400: #5fc88a;
+	--p-red-600: #c4320a;
+	--p-red-400: #ff6b5f;
+	--p-amber-500: #d97706;
+	--p-pink-600: #dd0674;
+	--p-violet-600: #5e3ee0;
+
+	/* 4px grid, generous defaults */
+	--p-space-1: 4px;
+	--p-space-2: 8px;
+	--p-space-3: 12px;
+	--p-space-4: 16px;
+	--p-space-5: 20px;
+	--p-space-6: 24px;
+	--p-space-8: 32px;
+	--p-space-10: 40px;
+	--p-space-12: 48px;
+	--p-space-16: 64px;
+	--p-space-24: 96px;
+
+	/* One radius family: smooth and consistent */
+	--p-radius-xs: 6px;
+	--p-radius-sm: 8px;
+	--p-radius-md: 12px;
+	--p-radius-lg: 16px;
+	--p-radius-xl: 18px;
+	--p-radius-pill: 999px;
+
+	/* Type */
+	--p-font-sans: 'Inter', 'InterVariable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	--p-font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
+	--p-tracking-display: -0.035em; /* tight on large headings */
+	--p-tracking-heading: -0.02em;
+	--p-tracking-body: -0.005em;
+	--p-tracking-label: 0.06em; /* loose on uppercase micro-labels */
+
+	/* Motion: decelerating, weighty */
+	--p-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+	--p-ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+	--p-duration-fast: 150ms;
+	--p-duration-base: 200ms;
+	--p-duration-slow: 250ms;
+
+	/* ---------- 2. Semantic (light) ---------- */
+	--ds-bg: var(--p-stone-50);
+	--ds-surface: var(--p-stone-0);
+	--ds-surface-elevated: #ffffff;
+	--ds-surface-sunken: var(--p-stone-25);
+	--ds-surface-glass: rgba(253, 253, 252, 0.72);
+	--ds-fill: rgba(10, 10, 10, 0.04);
+	--ds-fill-hover: rgba(10, 10, 10, 0.06);
+
+	--ds-text: var(--p-ink);
+	--ds-text-muted: var(--p-stone-500);
+	--ds-text-subtle: rgba(10, 10, 10, 0.4);
+	--ds-text-placeholder: rgba(10, 10, 10, 0.3);
+	--ds-text-on-primary: var(--p-stone-0);
+
+	--ds-border: var(--p-stone-200);
+	--ds-border-subtle: rgba(10, 10, 10, 0.06);
+	--ds-hairline-light: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+	--ds-primary: #171717;
+	--ds-accent: var(--p-blue-500);
+	--ds-success: var(--p-green-600);
+	--ds-danger: var(--p-red-600);
+	--ds-danger-strong: var(--p-red-400);
+	--ds-info: var(--p-blue-400);
+	--ds-pro-from: var(--p-pink-600);
+	--ds-pro-to: var(--p-violet-600);
+
+	--ds-focus: color-mix(in srgb, var(--ds-accent) 70%, transparent);
+	--ds-focus-halo: 0 0 0 3px color-mix(in srgb, var(--ds-accent) 18%, transparent);
+
+	/* Elevation: layered low-opacity ambient shadows + crisp hairline ring */
+	--ds-elevation-1: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
+	--ds-elevation-2: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.05), 0 8px 24px -8px rgba(0, 0, 0, 0.08);
+	--ds-elevation-3: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 4px 42px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.05);
+
+	--ds-radius-control: var(--p-radius-sm);
+	--ds-radius-card: var(--p-radius-md);
+	--ds-radius-panel: var(--p-radius-lg);
+	--ds-radius-small: var(--p-radius-xs);
+
+	--ds-font: var(--p-font-sans);
+	--ds-ease: var(--p-ease-out);
+	--ds-duration: var(--p-duration-base);
+}
+
+:where([data-theme='dark'], .dark) {
+	--ds-bg: var(--p-stone-950);
+	--ds-surface: var(--p-stone-900);
+	--ds-surface-elevated: var(--p-stone-850);
+	--ds-surface-sunken: #111113;
+	--ds-surface-glass: rgba(21, 21, 23, 0.72);
+	--ds-fill: rgba(255, 255, 255, 0.05);
+	--ds-fill-hover: rgba(255, 255, 255, 0.08);
+	--ds-text: #ededed;
+	--ds-text-muted: #8f8f8f;
+	--ds-text-subtle: rgba(255, 255, 255, 0.4);
+	--ds-text-placeholder: rgba(255, 255, 255, 0.3);
+	--ds-text-on-primary: #121213;
+	--ds-border: #262628;
+	--ds-border-subtle: rgba(255, 255, 255, 0.07);
+	--ds-hairline-light: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+	--ds-primary: #ededed;
+	--ds-accent: #4d8dff;
+	--ds-success: var(--p-green-400);
+	--ds-danger: #ff8a7a;
+	--ds-elevation-1: 0 0 0 0.5px rgba(255, 255, 255, 0.08), 0 1px 1.5px rgba(0, 0, 0, 0.5);
+	--ds-elevation-2: 0 0 0 0.5px rgba(255, 255, 255, 0.08), 0 4px 14px rgba(0, 0, 0, 0.45);
+	--ds-elevation-3: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 4px 42px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- 3. Component bridge (opt-in with data-ds) ---------- */
+:where([data-ds]) {
+	--aui-font: var(--ds-font);
+	--aui-ink: var(--ds-text);
+	--aui-primary: var(--ds-primary);
+	--aui-on-primary: var(--ds-text-on-primary);
+	--aui-muted: var(--ds-text-muted);
+	--aui-placeholder: var(--ds-text-placeholder);
+	--aui-surface: var(--ds-surface-elevated);
+	--aui-subtle: var(--ds-fill);
+	--aui-border: var(--ds-border-subtle);
+	--aui-focus: var(--ds-focus);
+	--aui-blue: var(--ds-accent);
+	--aui-success: var(--ds-success);
+	--aui-danger: var(--ds-danger);
+	--aui-radius: var(--ds-radius-control);
+	--aui-radius-sm: var(--ds-radius-small);
+	--aui-radius-lg: var(--ds-radius-card);
+	--aui-shadow-card: var(--ds-elevation-1);
+	--aui-ease: var(--ds-ease);
+}
