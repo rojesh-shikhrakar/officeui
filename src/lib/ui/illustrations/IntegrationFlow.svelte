@@ -1,7 +1,7 @@
 <!-- Integration Flow – integration pills ride along a dashed arc, and the one passing the centre beams its data into your product's pill on a warm gradient. -->
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { mark, type Mark } from './marks';
+	import { mark, type Mark } from '../utils/marks';
 	let {
 		product = { title: 'Data Analysis', sub: 'Centralized data processing' },
 		items = [

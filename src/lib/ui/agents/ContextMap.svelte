@@ -6,7 +6,7 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { play } from './script';
+	import { play } from '../utils/script';
 	import './agents.css';
 	const P = (id: string, label: string, tokens: number, kind: ContextPart['kind']): ContextPart => ({ id, label, tokens, kind });
 	let {

@@ -7,7 +7,7 @@
 	import { flip } from 'svelte/animate';
 	import NumberTicker from '../motion/NumberTicker.svelte';
 	import { onMount } from 'svelte';
-	import { play } from '../agents/script';
+	import { play } from '../utils/script';
 	import '../agents/agents.css';
 	let {
 		title = 'Revenue by channel',

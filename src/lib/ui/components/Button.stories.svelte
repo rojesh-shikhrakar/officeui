@@ -11,7 +11,7 @@
 		tags: ['autodocs'],
 		args: { label: 'Continue', variant: 'primary', size: 'md', loading: false, disabled: false, onclick: fn() },
 		argTypes: {
-			variant: { control: 'inline-radio', options: ['primary', 'secondary', 'ghost', 'destructive'] },
+			variant: { control: 'inline-radio', options: ['primary', 'accent', 'secondary', 'ghost', 'destructive', 'link'] },
 			size: { control: 'inline-radio', options: ['sm', 'md', 'lg'] }
 		}
 	});
@@ -23,7 +23,12 @@
 			<Button label="Save changes" />
 			<Button variant="secondary" label="Secondary" />
 			<Button variant="ghost" label="Ghost" />
+			<Button variant="accent" label="Accent" />
+			<Button variant="link" label="Link" />
 			<Button variant="destructive" label="Delete">{#snippet icon()}<Ico name="trash" />{/snippet}</Button>
+		</Section>
+		<Section label="Full width">
+			<div style="width: 280px"><Button variant="secondary" fullWidth label="Full width" /></div>
 		</Section>
 		<Section label="Icons and sizes" zoom={1.15}>
 			<Button variant="secondary" size="sm" label="Add item">{#snippet icon()}<Ico name="plus" size={16} />{/snippet}</Button>

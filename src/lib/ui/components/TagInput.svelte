@@ -1,4 +1,4 @@
-<!-- Tag Input – ported from affectUI (MIT). Several values as chips: validate, split on separators, paste, keyboard editing. -->
+<!-- Tag Input – Several values as chips: validate, split on separators, paste, keyboard editing. -->
 <script lang="ts">
 	import { tick } from 'svelte';
 	import './tag-input.css';

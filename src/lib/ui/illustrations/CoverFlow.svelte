@@ -1,4 +1,4 @@
-<!-- Cover Flow – ported from affectUI (MIT). Browse covers in 3D: spring motion, drag and flick, wheel scrub, keyboard, reflection, caption and ticks. -->
+<!-- Cover Flow – Browse covers in 3D: spring motion, drag and flick, wheel scrub, keyboard, reflection, caption and ticks. -->
 <script lang="ts" module>
 	import type { Snippet } from 'svelte';
 	export type CoverFlowItem = {
@@ -270,7 +270,7 @@
 
 {#snippet face(item: CoverFlowItem, decorative: boolean)}
 	<div class="ui-cf__media" style:background={item.image ? undefined : item.art}>
-		{#if item.image}<img src={item.image} alt={decorative ? '' : (item.alt ?? item.title ?? '')} draggable="false" loading="lazy" decoding="async" onerror={(e) => (e.currentTarget.style.visibility = 'hidden')} />{/if}
+		{#if item.image}<img src={item.image} alt={decorative ? '' : (item.alt ?? item.title ?? '')} draggable="false" loading="lazy" decoding="async" onerror={(e) => ((e.currentTarget as HTMLElement).style.visibility = 'hidden')} />{/if}
 	</div>
 {/snippet}
 

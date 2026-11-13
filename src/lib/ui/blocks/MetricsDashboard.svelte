@@ -1,6 +1,6 @@
 <!-- Metrics Dashboard – a sales overview: KPI cards pick the metric, one chart switches between line and bars and can compare with the previous period, with top products and channels below. -->
 <script lang="ts">
-	import { series, linePath, areaPath } from '../agents/chart';
+	import { series, linePath, areaPath } from '../utils/chart';
 	import '../agents/agents.css';
 	let {
 		store = 'Northwind Store',

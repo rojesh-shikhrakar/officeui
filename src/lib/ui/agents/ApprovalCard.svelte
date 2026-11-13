@@ -1,7 +1,7 @@
 <!-- Approval Card – an agent asks before it acts: risk badge, preview, Approve and Deny with shortcuts, a pausing countdown and a morph to the result. -->
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { tick } from './script';
+	import { tick } from '../utils/script';
 	import './agents.css';
 	let {
 		message = 'I drafted the October newsletter. Ready to send?',

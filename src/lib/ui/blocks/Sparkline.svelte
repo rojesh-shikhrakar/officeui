@@ -1,6 +1,6 @@
 <!-- Sparkline – a tiny trend line with an end dot, used by the dashboard blocks. -->
 <script lang="ts">
-	import { linePath, areaPath } from '../agents/chart';
+	import { linePath, areaPath } from '../utils/chart';
 	let { values, width = 60, height = 22, color = 'var(--ag-blue, #0070d6)', area = false, label }: { values: number[]; width?: number; height?: number; color?: string; area?: boolean; label?: string } = $props();
 	const max = $derived(Math.max(...values) * 1.05);
 	const last = $derived(height - 2 - (values[values.length - 1] / max) * (height - 4));

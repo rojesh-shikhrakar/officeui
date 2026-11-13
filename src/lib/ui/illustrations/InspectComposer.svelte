@@ -1,7 +1,7 @@
 <!-- Inspect Composer – a chat composer tilted back like a selection in a design tool: its toolbar selected, spacing marks, a size label and a cursor. -->
 <script lang="ts">
 	import './inspect.css';
-	import { mark } from './marks';
+	import { mark } from '../utils/marks';
 	let { prompt = 'Ask the agents to ship the new pricing page', mode = 'Auto' }: { prompt?: string; mode?: string } = $props();
 	const apps = [mark(9), mark(3), mark(7)];
 </script>

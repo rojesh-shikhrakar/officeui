@@ -45,7 +45,7 @@
 			<p>Your bestseller is the {product.name} (the only product synced so far – the store is still importing, so treat that ranking as provisional).</p>
 			<p>Before I brief and generate the ads, I need one thing I can't infer, because it drives the whole copy structure: how should we sell this shirt?</p>
 			<small>Agents working</small>
-			<div class="ui-ach__chips">{#each agents as a, i (a)}<span class="ui-ag-chip" aria-pressed={i === 0}>◌ {a}</span>{/each}</div>
+			<div class="ui-ach__chips">{#each agents as a, i (a)}<span class="ui-ag-chip" data-on={i === 0}>◌ {a}</span>{/each}</div>
 			{#if sent}<p class="ui-ag-in"><b>On it.</b> Generating {Object.values(channels).filter(Boolean).length * 3} ads with the {angle.toLowerCase()} angle in the {palette.toLowerCase()} palette.</p>{/if}
 		</div>
 	</div>

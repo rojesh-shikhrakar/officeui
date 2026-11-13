@@ -5,7 +5,7 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { tick } from './script';
+	import { tick } from '../utils/script';
 	import './agents.css';
 	let {
 		task = 'Fix the flaky checkout test',

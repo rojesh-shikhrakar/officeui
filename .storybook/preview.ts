@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/sveltekit'
+import '../src/lib/ui/tokens.css';
+import '../src/lib/ui/theme-officeui.css';
 
 const preview: Preview = {
   parameters: {

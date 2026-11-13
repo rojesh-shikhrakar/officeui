@@ -1,7 +1,7 @@
-<!-- Tool Call Group – ported from affectUI (MIT). Sums up several tool calls in one line and folds open to the cards. -->
+<!-- Tool Call Group – Sums up several tool calls in one line and folds open to the cards. -->
 <script lang="ts">
 	import ToolCallCard from './ToolCallCard.svelte';
-	import { Stopwatch, formatMs, type ToolCall } from './tool-call.svelte';
+	import { Stopwatch, formatMs, type ToolCall } from '../utils/tool-call.svelte';
 	import './tool-call-card.css';
 
 	let {

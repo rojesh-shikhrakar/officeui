@@ -6,7 +6,7 @@
 <script lang="ts">
 	import AppShell from './shell/AppShell.svelte';
 	import InlineDiff from '../agents/InlineDiff.svelte';
-	import { linePath } from '../agents/chart';
+	import { linePath } from '../utils/chart';
 	import './shell/screen.css';
 	let {
 		prompt = 'Support reply prompt',

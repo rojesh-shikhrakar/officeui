@@ -1,0 +1,19 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      # TODO: add `bun run lint` once prettier (672 files) and eslint (172 errors) are clean
+      - run: node scripts/gen-index.mjs --check
+      - run: bun run check
+      - run: bunx playwright install --with-deps chromium
+      - run: bunx vitest run
+      - run: bun run build-storybook --quiet
+      - run: bun run build

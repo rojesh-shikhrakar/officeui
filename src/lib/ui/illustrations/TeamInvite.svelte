@@ -1,10 +1,10 @@
-<!-- Team Invite – ported from affectUI (MIT). Two connected teammates; a third is dragged into the empty slot and joins. -->
+<!-- Team Invite – Two connected teammates; a third is dragged into the empty slot and joins. -->
 <script lang="ts" module>
 	export type TeamInviteAvatar = { src: string; name?: string };
 </script>
 
 <script lang="ts">
-	import { avatarUrl } from './avatar';
+	import { avatarUrl } from '../utils/avatar';
 	import './team-invite.css';
 	let {
 		avatars = [

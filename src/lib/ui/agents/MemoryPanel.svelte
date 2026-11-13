@@ -5,7 +5,7 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { play } from './script';
+	import { play } from '../utils/script';
 	import './agents.css';
 	let {
 		enabled = $bindable(true),
@@ -16,7 +16,7 @@
 			{ id: 4, text: 'Product designer and front-end developer at a small studio', cat: 'Work', source: 'From chat', date: 'Sep 28' },
 			{ id: 5, text: 'Works mostly in SvelteKit and Tailwind', cat: 'Work', source: 'From chat', date: 'Sep 30' },
 			{ id: 6, text: 'Ships a weekly changelog every Friday', cat: 'Work', source: 'From chat', date: 'Oct 9' },
-			{ id: 7, text: 'Building a component library called moodUI', cat: 'Projects', source: 'From chat', date: 'Oct 14' },
+			{ id: 7, text: 'Building a component library called OfficeUI', cat: 'Projects', source: 'From chat', date: 'Oct 14' },
 			{ id: 8, text: 'Redesigning a booking flow for a yoga studio', cat: 'Projects', source: 'You added', date: 'Oct 15' }
 		] as Memory[])
 	}: { enabled?: boolean; memories?: Memory[] } = $props();

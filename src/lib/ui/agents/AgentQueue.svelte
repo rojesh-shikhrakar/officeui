@@ -5,8 +5,8 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { linePath, areaPath } from './chart';
-	import { tick } from './script';
+	import { linePath, areaPath } from '../utils/chart';
+	import { tick } from '../utils/script';
 	import './agents.css';
 	let {
 		name = 'agent-jobs',

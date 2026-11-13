@@ -1,0 +1,15 @@
+.ui-sld { display: flex; flex-direction: column; gap: 10px; min-width: 160px; font-family: var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); font-size: 13px; color: var(--aui-ink, rgba(0, 0, 0, 0.88)); }
+.ui-sld__head { display: flex; justify-content: space-between; font-weight: 500; }
+.ui-sld__val { color: var(--aui-muted, rgba(0, 0, 0, 0.55)); font-variant-numeric: tabular-nums; }
+.ui-sld__area { position: relative; height: 20px; margin: 0 8px; cursor: pointer; touch-action: none; }
+.ui-sld__track { position: absolute; left: -8px; right: -8px; top: 8px; height: 4px; border-radius: 2px; background: var(--aui-subtle, rgba(0, 0, 0, 0.1)); }
+.ui-sld__fill { position: absolute; top: 0; bottom: 0; background: var(--aui-primary, rgba(0, 0, 0, 0.88)); border-radius: 2px; }
+.ui-sld__thumb { position: absolute; top: 2px; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: var(--aui-surface, #fff); box-shadow: 0 0 0 1.5px var(--aui-primary, rgba(0, 0, 0, 0.88)), 0 1px 3px rgba(0, 0, 0, 0.2); outline: 0; }
+.ui-sld__thumb:focus-visible { box-shadow: 0 0 0 1.5px var(--aui-primary, rgba(0, 0, 0, 0.88)), 0 0 0 4px color-mix(in srgb, var(--aui-focus, #0060e2) 45%, transparent); }
+.ui-sld__tip { position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); padding: 2px 6px; border-radius: 4px; background: var(--aui-primary, rgba(0, 0, 0, 0.88)); color: var(--aui-on-primary, #fcfcfc); font-size: 11px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 120ms; }
+.ui-sld__thumb:hover .ui-sld__tip, .ui-sld__thumb:focus-visible .ui-sld__tip, .ui-sld__thumb.is-drag .ui-sld__tip { opacity: 1; }
+.ui-sld__mark { position: absolute; top: 8px; }
+.ui-sld__mark i { position: absolute; left: -1px; top: 0; width: 2px; height: 4px; background: var(--aui-surface, #fff); }
+.ui-sld__mark b { position: absolute; top: 18px; left: 0; transform: translateX(-50%); font-size: 11px; font-weight: 400; color: var(--aui-muted, rgba(0, 0, 0, 0.5)); white-space: nowrap; }
+.ui-sld:has(.ui-sld__mark b) { padding-bottom: 18px; }
+.ui-sld.is-disabled { opacity: 0.45; pointer-events: none; }

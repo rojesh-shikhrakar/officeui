@@ -1,0 +1,11 @@
+.ui-pcr { --ui-pcr-tone: var(--aui-primary, rgba(0, 0, 0, 0.88)); position: relative; display: inline-grid; place-items: center; flex: none; font-family: var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); }
+.ui-pcr--success { --ui-pcr-tone: var(--aui-success, #1e8a4f); }
+.ui-pcr--warning { --ui-pcr-tone: var(--aui-warning, #d97706); }
+.ui-pcr--danger { --ui-pcr-tone: var(--aui-danger, #c4320a); }
+.ui-pcr svg { position: absolute; inset: 0; }
+.ui-pcr__track { stroke: var(--aui-subtle, rgba(0, 0, 0, 0.08)); }
+.ui-pcr__fill { stroke: var(--ui-pcr-tone); transition: stroke-dashoffset 300ms var(--aui-ease, ease); }
+.ui-pcr__val { position: relative; font-weight: 600; color: var(--aui-ink, rgba(0, 0, 0, 0.88)); font-variant-numeric: tabular-nums; }
+.ui-pcr.is-ind svg { animation: ui-pcr-spin 1s linear infinite; }
+@keyframes ui-pcr-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .ui-pcr__fill { transition: none; } .ui-pcr.is-ind svg { animation-duration: 3s; } }

@@ -21,13 +21,14 @@
 			['r', 'd'],
 			['w', 'g'],
 			['w', 'n']
-		]
-	}: { nodes?: GNode[]; edges?: string[][] } = $props();
+		],
+		class: cls
+	}: { nodes?: GNode[]; edges?: string[][]; class?: string } = $props();
 	const at = (id: string) => nodes.find((n) => n.id === id)!;
 	let hover = $state<string | null>(null);
 </script>
 
-<div class="ui-ag ui-agg">
+<div class={['ui-ag ui-agg', cls]}>
 	<svg class="ui-agg__edges" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
 		{#each edges as [a, b] (a + b)}
 			{@const A = at(a)}

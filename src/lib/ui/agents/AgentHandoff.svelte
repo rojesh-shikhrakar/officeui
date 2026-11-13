@@ -7,7 +7,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Mark from './Mark.svelte';
-	import { play } from './script';
+	import { play } from '../utils/script';
 	import './agents.css';
 	let {
 		agents = [

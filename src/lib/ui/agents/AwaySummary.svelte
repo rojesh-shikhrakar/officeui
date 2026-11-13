@@ -5,7 +5,7 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { play } from './script';
+	import { play } from '../utils/script';
 	import './agents.css';
 	let {
 		you = 'Get ingest onto staging today – ping me if you need anything.',

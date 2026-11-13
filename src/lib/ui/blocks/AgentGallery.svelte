@@ -4,7 +4,7 @@
 </script>
 
 <script lang="ts">
-	import { series } from '../agents/chart';
+	import { series } from '../utils/chart';
 	import Sparkline from './Sparkline.svelte';
 	import '../agents/agents.css';
 	let {

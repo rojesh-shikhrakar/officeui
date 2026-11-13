@@ -1,8 +1,8 @@
 <!-- Project Flow – a client task branches into notes and assigned roles; each node slides in along a connector, then the scene loops. -->
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { mark } from './marks';
-	import { avatarUrl } from './avatar';
+	import { mark } from '../utils/marks';
+	import { avatarUrl } from '../utils/avatar';
 	let {
 		client = 'Lumen',
 		task = 'Web Design',

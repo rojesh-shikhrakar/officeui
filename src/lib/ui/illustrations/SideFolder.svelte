@@ -1,4 +1,4 @@
-<!-- Side Folder – ported from affectUI (MIT). Glassy blue folder on its side; documents slide out as the pocket swings open on hover. -->
+<!-- Side Folder – Glassy blue folder on its side; documents slide out as the pocket swings open on hover. -->
 <script lang="ts">
 	import './side-folder.css';
 	let { label = 'Blue folder on its side, with three documents peeking out behind a frosted front pocket', class: cls }: { label?: string; class?: string } = $props();

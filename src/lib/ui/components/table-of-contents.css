@@ -1,0 +1,11 @@
+.ui-toc { font-family: var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); }
+.ui-toc__title { margin: 0 0 12px; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--aui-ink, rgba(0, 0, 0, 0.88)); }
+.ui-toc ol { list-style: none; margin: 0; padding: 0; }
+.ui-toc--rail ol { border-left: 1px solid var(--aui-border, rgba(0, 0, 0, 0.08)); }
+.ui-toc a { position: relative; display: block; padding: 5px 0 5px 16px; font-size: 14px; line-height: 20px; color: var(--aui-muted, rgba(0, 0, 0, 0.5)); text-decoration: none; transition: color 120ms ease; }
+.ui-toc a:hover { color: var(--aui-ink, rgba(0, 0, 0, 0.88)); }
+.ui-toc a:focus-visible { outline: 2px solid var(--aui-focus, rgba(0, 96, 226, 0.7)); outline-offset: 2px; border-radius: 2px; }
+.ui-toc a.is-on { color: var(--aui-ink, rgba(0, 0, 0, 0.88)); font-weight: 600; }
+.ui-toc--rail a.is-on::before { content: ""; position: absolute; left: -1px; top: 4px; bottom: 4px; width: 2px; border-radius: 2px; background: var(--aui-ink, rgba(0, 0, 0, 0.88)); }
+.ui-toc__l2 a { padding-left: 30px; } .ui-toc__l3 a { padding-left: 44px; font-size: 13px; }
+.ui-toc--plain a { padding-left: 0; } .ui-toc--plain .ui-toc__l2 a { padding-left: 14px; } .ui-toc--plain .ui-toc__l3 a { padding-left: 28px; }

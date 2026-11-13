@@ -1,4 +1,4 @@
-<!-- Text Reveal – ported from affectUI (MIT). Words or letters blur and rise into place when the text enters the view. -->
+<!-- Text Reveal – Words or letters blur and rise into place when the text enters the view. -->
 <script lang="ts" module>
 	const segmenter = typeof Intl !== 'undefined' && 'Segmenter' in Intl ? new Intl.Segmenter(undefined, { granularity: 'grapheme' }) : null;
 	const graphemes = (s: string) => (segmenter ? Array.from(segmenter.segment(s), (x) => x.segment) : Array.from(s));

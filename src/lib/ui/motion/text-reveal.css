@@ -1,4 +1,4 @@
-/* Ported from affectUI (motion/text-reveal.tsx), MIT License (c) 2026 Florian Höller. */
+/* Based on motion/text-reveal.tsx. */
 
 .ui-trv {
   --ui-trv-blur: 8px;

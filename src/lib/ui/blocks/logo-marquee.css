@@ -1,4 +1,4 @@
-/* Ported from affectUI (blocks/logo-marquee-clean.tsx), MIT License (c) 2026 Florian Höller. */
+/* Based on blocks/logo-marquee-clean.tsx. */
 
 .ui-lmc {
   --ui-lmc-focus: var(--aui-focus, rgba(0, 96, 226, 0.7));

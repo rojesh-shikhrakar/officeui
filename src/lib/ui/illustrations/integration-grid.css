@@ -1,4 +1,4 @@
-/* Ported from affectUI (illustrations/integration-grid.tsx), MIT License (c) 2026 Florian Höller. */
+/* Based on illustrations/integration-grid.tsx. */
 
 .ui-ig {
   /* 1 unit of the layout grid – 1520 × 560 with 9 columns, narrower with fewer */

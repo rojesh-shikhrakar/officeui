@@ -8,7 +8,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Mark from './Mark.svelte';
-	import { play, tick } from './script';
+	import { play, tick } from '../utils/script';
 	import './agents.css';
 	const S = (name: string, model: string, mark: string, color: string, status: Status, task: string, tools: number[], cost: number, secs: number, tasks?: number, child = false): Sub => ({ name, model, mark, color, status, task, tools, cost, secs, tasks, child });
 	let {

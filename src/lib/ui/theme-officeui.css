@@ -1,0 +1,114 @@
+/*
+ * OfficeUI theme: warm paper, navy ink, brass accent, serif headings, small radii.
+ * Opt-in: <html data-ds data-ds-theme="officeui">. Only remaps tier 2 (--ds-*) plus the few
+ * --aui-* tokens the bridge doesn't cover, so every component follows. Dark: add data-theme="dark".
+ * Ponytail: components with hard-coded rgba(0,0,0) fallbacks (e.g. switch off-track) stay neutral.
+ */
+
+/* Per-component styling lives in theme/*.css (imports must come first) */
+@import './theme/button.css';
+@import './theme/inputs.css';
+@import './theme/overlays-nav.css';
+@import './theme/data-feedback.css';
+@import './theme/layout-misc.css';
+
+[data-ds-theme='officeui'] {
+	--p-font-sans: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+	--ds-font-serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+	--ds-font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+	--p-tracking-display: -0.015em;
+
+	--ds-bg: #f6f1e7;
+	--ds-surface: #fcfaf5;
+	--ds-surface-elevated: #fcfaf5;
+	--ds-surface-sunken: #ece5d6;
+	--ds-surface-glass: rgba(252, 250, 245, 0.72);
+	--ds-fill: rgba(23, 35, 56, 0.045);
+	--ds-fill-hover: rgba(23, 35, 56, 0.08);
+
+	--ds-text: #121c2b;
+	--ds-text-muted: #4b5465;
+	--ds-text-subtle: rgba(18, 28, 43, 0.5);
+	--ds-text-placeholder: rgba(18, 28, 43, 0.38);
+	--ds-text-on-primary: #f6f1e7;
+
+	--ds-border: #d8cfba;
+	--ds-border-subtle: #ddd4bf;
+	--ds-border-strong: #857d6a;
+	--ds-hairline-light: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+
+	--ds-primary: #172338;
+	--ds-accent: #7a5a1c; /* brass ink */
+	--ds-brass: #a67f35;
+	--ds-brass-wash: #f1e6cc;
+	--ds-success: #1c6a5d;
+	--ds-danger: #a1322a;
+	--ds-danger-strong: #a1322a;
+	--ds-warning: #7a5200;
+	--ds-info: #2a5a8c;
+
+	--ds-focus: #2d5da3;
+	--ds-focus-halo: 0 0 0 3px rgba(45, 93, 163, 0.2);
+
+	--ds-elevation-1: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 0 0 1px rgba(23, 35, 56, 0.04), 0 1px 2px rgba(23, 35, 56, 0.06), 0 2px 6px rgba(23, 35, 56, 0.05);
+	--ds-elevation-2: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 1px 2px rgba(23, 35, 56, 0.06), 0 4px 8px rgba(23, 35, 56, 0.06), 0 12px 24px rgba(23, 35, 56, 0.08);
+	--ds-elevation-3: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 2px 4px rgba(23, 35, 56, 0.06), 0 8px 16px rgba(23, 35, 56, 0.08), 0 24px 48px rgba(23, 35, 56, 0.12);
+
+	/* Editorial: near-square corners */
+	--p-radius-xs: 2px;
+	--p-radius-sm: 4px;
+	--p-radius-md: 6px;
+	--p-radius-lg: 8px;
+	--p-radius-xl: 8px;
+
+	--aui-border-strong: var(--ds-border-strong);
+	--aui-warning: var(--ds-warning);
+	--aui-info: var(--ds-info);
+	--aui-shadow-popover: var(--ds-elevation-3);
+	--aui-serif: var(--ds-font-serif);
+	--aui-mono: var(--ds-font-mono);
+}
+
+[data-ds-theme='officeui']:is([data-theme='dark'], .dark) {
+	--ds-bg: #0e1520;
+	--ds-surface: #16202e;
+	--ds-surface-elevated: #16202e;
+	--ds-surface-sunken: #0a0f17;
+	--ds-surface-glass: rgba(22, 32, 46, 0.72);
+	--ds-fill: rgba(236, 230, 214, 0.05);
+	--ds-fill-hover: rgba(236, 230, 214, 0.09);
+	--ds-text: #ece6d6;
+	--ds-text-muted: #a7afbc;
+	--ds-text-subtle: rgba(236, 230, 214, 0.45);
+	--ds-text-placeholder: rgba(236, 230, 214, 0.32);
+	--ds-text-on-primary: #0e1520;
+	--ds-border: #2a3547;
+	--ds-border-subtle: #2a3547;
+	--ds-border-strong: #7a8598;
+	--ds-hairline-light: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+	--ds-primary: #ece6d6;
+	--ds-accent: #d3ad62;
+	--ds-brass: #d3ad62;
+	--ds-brass-wash: #2d2412;
+	--ds-success: #5fc1ad;
+	--ds-danger: #ee8b80;
+	--ds-danger-strong: #ee8b80;
+	--ds-warning: #e3b45a;
+	--ds-info: #7fb0ee;
+	--ds-focus: #7fb0ee;
+	--ds-focus-halo: 0 0 0 3px rgba(127, 176, 238, 0.25);
+	--ds-elevation-1: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.4);
+	--ds-elevation-2: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.45), 0 4px 8px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0, 0, 0, 0.35);
+	--ds-elevation-3: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 2px 4px rgba(0, 0, 0, 0.5), 0 8px 16px rgba(0, 0, 0, 0.4), 0 24px 48px rgba(0, 0, 0, 0.45);
+}
+
+/* Identity details */
+[data-ds-theme='officeui'] body { background: var(--ds-bg); color: var(--ds-text); }
+/* Serif for titles, headline numbers and brand marks */
+[data-ds-theme='officeui'] :is(.ui-card__title, .ui-dlg__title, .ui-stat__value, .ui-nvb__brand, .ui-emp__title, .ui-sdb__heading) {
+	font-family: var(--ds-font-serif);
+	font-weight: 500;
+	font-variation-settings: 'opsz' 24;
+	letter-spacing: -0.005em;
+}
+

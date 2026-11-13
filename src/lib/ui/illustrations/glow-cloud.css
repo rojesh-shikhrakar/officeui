@@ -1,4 +1,4 @@
-/* Ported from affectUI (illustrations/glow-cloud.tsx), MIT License (c) 2026 Florian Höller. */
+/* Based on illustrations/glow-cloud.tsx. */
 
 /* Palette as variables – blue, or red-orange via data-color="orange" */
 .ui-glw {

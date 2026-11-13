@@ -1,0 +1,8 @@
+.ui-pgn { display: inline-flex; align-items: center; gap: 4px; font-family: var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); }
+.ui-pgn__page { min-width: 32px; height: 32px; padding: 0 8px; display: inline-flex; align-items: center; justify-content: center; background: transparent; color: var(--aui-ink, rgba(0, 0, 0, 0.88)); border: 1px solid transparent; border-radius: var(--aui-radius, 8px); font: 500 13px/1 var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); font-variant-numeric: tabular-nums; cursor: pointer; transition: background-color 120ms ease, transform 100ms ease; }
+.ui-pgn__page:hover { background: var(--aui-subtle, rgba(0, 0, 0, 0.05)); }
+.ui-pgn__page:active { transform: scale(0.96); }
+.ui-pgn__page[aria-current="page"] { color: var(--aui-on-primary, #fff); background: var(--aui-primary, #151517); }
+.ui-pgn__page:disabled { opacity: 0.4; cursor: not-allowed; background: transparent; transform: none; }
+.ui-pgn__page:focus-visible { outline: 2px solid var(--aui-focus, rgba(0, 96, 226, 0.7)); outline-offset: 2px; }
+.ui-pgn__gap { min-width: 24px; text-align: center; color: var(--aui-muted, rgba(0, 0, 0, 0.5)); }

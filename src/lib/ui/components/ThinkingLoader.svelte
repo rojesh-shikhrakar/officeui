@@ -1,4 +1,4 @@
-<!-- Thinking Loader – ported from affectUI (MIT). A small working pill that walks through phases and finishes with a check. -->
+<!-- Thinking Loader – A small working pill that walks through phases and finishes with a check. -->
 <script lang="ts" module>
 	const DEFAULT_PHASES = ['Thinking', 'Searching the web', 'Reading sources', 'Writing response'];
 	const RAYS = Array.from({ length: 8 }, (_, i) => i);

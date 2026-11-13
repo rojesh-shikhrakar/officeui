@@ -1,0 +1,7 @@
+.ui-div { height: 1px; width: 100%; margin: 0; border: 0; background: var(--aui-border, rgba(0, 0, 0, 0.08)); }
+.ui-div--label {
+  display: flex; align-items: center; gap: 12px; height: auto; background: none;
+  font: 600 12px/16px var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); letter-spacing: 0.04em; text-transform: uppercase; color: var(--aui-muted, rgba(0, 0, 0, 0.5));
+}
+.ui-div--label::before, .ui-div--label::after { content: ""; flex: 1; height: 1px; background: var(--aui-border, rgba(0, 0, 0, 0.08)); }
+.ui-div-v { align-self: stretch; width: 1px; min-height: 1em; background: var(--aui-border, rgba(0, 0, 0, 0.08)); }

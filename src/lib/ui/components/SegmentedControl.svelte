@@ -1,4 +1,4 @@
-<!-- Segmented Control – ported from affectUI (MIT). Two to six options as buttons, a tray with a raised pill, or underline tabs; drag across, keyboard, scroll fades. -->
+<!-- Segmented Control – Two to six options as buttons, a tray with a raised pill, or underline tabs; drag across, keyboard, scroll fades. -->
 <script lang="ts" module>
 	export type SegmentOption = {
 		value: string;

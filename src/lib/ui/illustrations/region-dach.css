@@ -1,4 +1,4 @@
-/* Ported from affectUI (illustrations/region-dach.tsx), MIT License (c) 2026 Florian Höller. */
+/* Based on illustrations/region-dach.tsx. */
 
 .ui-rd {
   --ui-rd-ease: cubic-bezier(0.22, 1, 0.36, 1);

@@ -1,7 +1,7 @@
 <!-- Agent / Usage – what your agent costs: the month added up day by day against the budget, where it went by project or model, what's worth a look, and a project's day-by-day spend. -->
 <script lang="ts">
 	import AppShell from './shell/AppShell.svelte';
-	import { series, linePath, areaPath } from '../agents/chart';
+	import { series, linePath, areaPath } from '../utils/chart';
 	import { AGENT_NAV } from './shell/nav';
 	import './shell/screen.css';
 	let { budget = 500, month = 'November' }: { budget?: number; month?: string } = $props();

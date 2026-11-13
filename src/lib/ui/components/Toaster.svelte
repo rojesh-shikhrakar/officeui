@@ -5,7 +5,7 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { play } from '../agents/script';
+	import { play } from '../utils/script';
 	import '../agents/agents.css';
 	let { file = 'Q3 Board Report', meta = 'Finance · edited 2 min ago', toasts = $bindable([{ id: 1, title: 'Draft saved', detail: 'Q3 Board Report · all changes kept', tone: 'ok' }] as Toast[]), autoplay = true }: { file?: string; meta?: string; toasts?: Toast[]; autoplay?: boolean } = $props();
 	let hover = $state(false);

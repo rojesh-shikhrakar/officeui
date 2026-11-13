@@ -1,4 +1,4 @@
-<!-- Progress Tracker – ported from affectUI (MIT). Onboarding checklist with an animated bar, drawn ticks and auto play. -->
+<!-- Progress Tracker – Onboarding checklist with an animated bar, drawn ticks and auto play. -->
 <script lang="ts" module>
 	export type ProgressStep = { id: string; label: string; done?: boolean };
 	const num = new Intl.NumberFormat('en');

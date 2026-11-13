@@ -1,4 +1,4 @@
-<!-- Logo Marquee – ported from affectUI (MIT). The endless "Trusted by" strip: eases to a stop on hover, drag/fling, two rows, keyboard scrub. -->
+<!-- Logo Marquee – The endless "Trusted by" strip: eases to a stop on hover, drag/fling, two rows, keyboard scrub. -->
 <script lang="ts" module>
 	export type MarqueeLogo = {
 		/** Brand name – accessible name, and the visible label when `labels` is on */

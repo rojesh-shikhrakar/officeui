@@ -1,4 +1,4 @@
-<!-- Profile Menu – ported from affectUI (MIT). Account card with the signed-in user, menu actions and profile setup progress. -->
+<!-- Profile Menu – Account card with the signed-in user, menu actions and profile setup progress. -->
 <script lang="ts" module>
 	export type ProfileMenuItem = { id: string; label: string; icon?: 'settings' | 'language' | 'docs' | 'apps' | 'logout'; badge?: string; onSelect?: () => void };
 	export type ProfileSetup = { done: number; total: number; next?: string; onContinue?: () => void };

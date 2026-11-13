@@ -1,4 +1,4 @@
-// Map data (Natural Earth, public domain) projected onto a 540 × 440 viewBox – ported from affectUI (MIT).
+// Map data (Natural Earth, public domain) projected onto a 540 × 440 viewBox – 
 export type Region = 'dach' | 'us' | 'cn' | 'in' | 'br' | 'jp';
 /** First subpath of a path: the main landmass, where the band travels */
 const firstShape = (d: string) => d.slice(0, d.indexOf("z") + 1);

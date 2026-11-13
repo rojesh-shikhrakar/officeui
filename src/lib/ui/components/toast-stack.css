@@ -1,0 +1,22 @@
+.ui-tsk { position: fixed; z-index: 1000; display: flex; flex-direction: column; gap: 8px; width: min(360px, calc(100vw - 32px)); pointer-events: none; font: 400 13px/20px var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); }
+.ui-tsk.is-inline { position: absolute; }
+.ui-tsk--bottom-right { right: 16px; bottom: 16px; }
+.ui-tsk--bottom-left { left: 16px; bottom: 16px; }
+.ui-tsk--top-right { right: 16px; top: 16px; }
+.ui-tsk--top-left { left: 16px; top: 16px; }
+.ui-tsk--top { left: 50%; top: 16px; transform: translateX(-50%); }
+.ui-tsk--bottom { left: 50%; bottom: 16px; transform: translateX(-50%); }
+.ui-tsk__toast { --ui-tsk-tone: var(--aui-blue, #0060e2); pointer-events: auto; display: flex; gap: 10px; align-items: flex-start; padding: 12px; background: var(--aui-surface, #fff); color: var(--aui-ink, rgba(0, 0, 0, 0.88)); border: 1px solid var(--aui-border, rgba(0, 0, 0, 0.1)); border-left: 3px solid var(--ui-tsk-tone); border-radius: var(--aui-radius, 10px); box-shadow: var(--aui-shadow-card, 0 6px 20px rgba(0, 0, 0, 0.12)); animation: ui-tsk-in 200ms var(--aui-ease, ease) both; }
+.ui-tsk__toast--success { --ui-tsk-tone: var(--aui-success, #1e8a4f); }
+.ui-tsk__toast--warning { --ui-tsk-tone: var(--aui-warning, #d97706); }
+.ui-tsk__toast--danger { --ui-tsk-tone: var(--aui-danger, #c4320a); }
+.ui-tsk__icon { color: var(--ui-tsk-tone); display: flex; padding-top: 2px; }
+.ui-tsk__main { flex: 1; min-width: 0; }
+.ui-tsk__title { margin: 0; font-weight: 600; }
+.ui-tsk__desc { margin: 0; color: var(--aui-muted, rgba(0, 0, 0, 0.55)); }
+.ui-tsk__act { margin-top: 8px; }
+.ui-tsk__x { all: unset; cursor: pointer; display: flex; padding: 4px; border-radius: var(--aui-radius-sm, 6px); color: var(--aui-muted, rgba(0, 0, 0, 0.55)); }
+.ui-tsk__x:hover { background: var(--aui-subtle, rgba(0, 0, 0, 0.06)); }
+.ui-tsk__x:focus-visible { outline: 2px solid var(--aui-focus, rgba(0, 96, 226, 0.7)); }
+@keyframes ui-tsk-in { from { opacity: 0; transform: translateY(6px); } }
+@media (prefers-reduced-motion: reduce) { .ui-tsk__toast { animation: none; } }

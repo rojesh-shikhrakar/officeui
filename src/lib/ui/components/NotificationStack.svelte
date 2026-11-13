@@ -1,4 +1,4 @@
-<!-- Notification Stack – ported from affectUI (MIT). Notice cards stacked behind each other; dismiss brings the next forward. -->
+<!-- Notification Stack – Notice cards stacked behind each other; dismiss brings the next forward. -->
 <script lang="ts" module>
 	export type NoticePattern = 'orbit' | 'grid' | 'rays';
 	export type Notice = {

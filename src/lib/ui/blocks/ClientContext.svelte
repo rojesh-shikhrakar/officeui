@@ -5,8 +5,8 @@
 </script>
 
 <script lang="ts">
-	import { series } from '../agents/chart';
-	import { avatarUrl } from '../illustrations/avatar';
+	import { series } from '../utils/chart';
+	import { avatarUrl } from '../utils/avatar';
 	import Sparkline from './Sparkline.svelte';
 	import '../agents/agents.css';
 	let {

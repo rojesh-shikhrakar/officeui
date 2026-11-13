@@ -1,0 +1,10 @@
+.ui-rate { display: inline-flex; align-items: center; gap: 8px; font-family: var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); font-size: 13px; color: var(--aui-ink, rgba(0, 0, 0, 0.88)); }
+.ui-rate__stars { display: inline-flex; gap: 2px; border-radius: 4px; }
+.ui-rate__stars:focus-visible { outline: 2px solid var(--aui-focus, rgba(0, 96, 226, 0.7)); outline-offset: 2px; }
+.ui-rate__star { position: relative; display: block; cursor: pointer; }
+.ui-rate.is-ro .ui-rate__star { cursor: default; }
+.ui-rate__base { position: absolute; inset: 0; color: var(--aui-border-strong, rgba(0, 0, 0, 0.25)); }
+.ui-rate__fill { position: absolute; left: 0; top: 0; bottom: 0; overflow: hidden; color: #f5a524; }
+.ui-rate__fill > svg { max-width: none; }
+.ui-rate__meta { display: inline-flex; gap: 4px; color: var(--aui-muted, rgba(0, 0, 0, 0.55)); font-variant-numeric: tabular-nums; }
+.ui-rate__meta b { color: var(--aui-ink, rgba(0, 0, 0, 0.88)); font-weight: 600; }

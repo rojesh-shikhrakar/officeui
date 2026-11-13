@@ -1,4 +1,4 @@
-<!-- Number Ticker – ported from affectUI (MIT). Odometer-style digits that roll to the new value once in view. -->
+<!-- Number Ticker – Odometer-style digits that roll to the new value once in view. -->
 <script lang="ts" module>
 	type Part = { key: string; digit: number } | { key: string; char: string };
 	function split(text: string): Part[] {

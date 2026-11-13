@@ -1,4 +1,4 @@
-/* Ported from affectUI (components/filter-menu-clean.tsx), MIT License (c) 2026 Florian Höller. */
+/* Based on components/filter-menu-clean.tsx. */
 
 /* Colors and motion as variables – override them on .ui-fmc */
 .ui-fmc {

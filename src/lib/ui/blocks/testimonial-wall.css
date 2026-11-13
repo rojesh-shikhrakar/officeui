@@ -1,4 +1,4 @@
-/* Ported from affectUI (blocks/testimonial-wall-clean.tsx), MIT License (c) 2026 Florian Höller. */
+/* Based on blocks/testimonial-wall-clean.tsx. */
 
 .ui-twc {
   --ui-twc-card: var(--aui-surface, #ffffff);

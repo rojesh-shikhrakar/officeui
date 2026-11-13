@@ -1,0 +1,23 @@
+/* Shared overlay pieces (scrim, panel footer) are used by Drawer, BottomSheet, ActionSheet too. */
+.ui-scrim { position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(10, 10, 10, 0.4); backdrop-filter: blur(2px); animation: ui-scrim-fade 160ms ease; }
+.ui-scrim--right { justify-content: flex-end; padding: 0; }
+.ui-scrim--left { justify-content: flex-start; padding: 0; }
+.ui-scrim--bottom { align-items: flex-end; padding: 0; }
+.ui-scrim.is-inline { position: absolute; z-index: 5; }
+@keyframes ui-scrim-fade { from { opacity: 0; } to { opacity: 1; } }
+
+.ui-dlg {
+  width: 100%; max-height: calc(100vh - 32px); display: flex; flex-direction: column; outline: none;
+  background: var(--aui-surface, #fff); color: var(--aui-ink, rgba(0, 0, 0, 0.88));
+  border: 1px solid var(--aui-border, rgba(0, 0, 0, 0.08)); border-radius: var(--aui-radius-lg, 12px);
+  box-shadow: var(--ds-elevation-2, 0 2px 6px rgba(0, 0, 0, 0.05), 0 16px 40px -8px rgba(0, 0, 0, 0.2));
+  font-family: var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif);
+  animation: ui-dlg-in 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ui-dlg--sm { max-width: 400px; } .ui-dlg--md { max-width: 520px; } .ui-dlg--lg { max-width: 720px; }
+.ui-dlg__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 20px 20px 0; }
+.ui-dlg__title { margin: 0; font-size: 18px; line-height: 26px; font-weight: 600; letter-spacing: -0.01em; text-wrap: balance; }
+.ui-dlg__body { padding: 8px 20px 20px; overflow: auto; font-size: 14px; line-height: 22px; text-wrap: pretty; }
+.ui-dlg__foot { display: flex; justify-content: flex-end; gap: 8px; padding: 14px 20px; background: var(--aui-subtle, rgba(0, 0, 0, 0.03)); border-top: 1px solid var(--aui-border, rgba(0, 0, 0, 0.08)); border-radius: 0 0 var(--aui-radius-lg, 12px) var(--aui-radius-lg, 12px); }
+@keyframes ui-dlg-in { from { opacity: 0; transform: translateY(6px) scale(0.98); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .ui-scrim, .ui-dlg { animation: none; } }

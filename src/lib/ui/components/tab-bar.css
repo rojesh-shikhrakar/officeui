@@ -1,0 +1,16 @@
+.ui-tbb { font-family: var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); background: var(--aui-surface, #fff); border-top: 1px solid var(--aui-border, rgba(0, 0, 0, 0.08)); padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)); }
+.ui-tbb.is-fixed { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; }
+.ui-tbb ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: space-around; gap: 4px; }
+.ui-tbb li { flex: 1; display: flex; justify-content: center; max-width: 120px; }
+.ui-tbb__btn { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; width: 100%; padding: 4px 8px; background: none; border: 0; color: var(--aui-muted, rgba(0, 0, 0, 0.5)); cursor: pointer; font: 500 11px/16px var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); border-radius: var(--aui-radius, 8px); transition: color 120ms ease; }
+.ui-tbb__ic { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 30px; border-radius: 999px; transition: background-color 160ms ease, transform 160ms ease; }
+.ui-tbb__btn:hover:not(.is-on) { color: var(--aui-ink, rgba(0, 0, 0, 0.88)); }
+.ui-tbb__btn:active .ui-tbb__ic { transform: scale(0.92); }
+.ui-tbb__btn:focus-visible { outline: 2px solid var(--aui-focus, rgba(0, 96, 226, 0.7)); outline-offset: 2px; }
+.ui-tbb__btn.is-on { color: var(--aui-ink, rgba(0, 0, 0, 0.88)); }
+.ui-tbb__btn.is-on .ui-tbb__ic { background: var(--aui-subtle, rgba(0, 0, 0, 0.08)); }
+.ui-tbb__btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.ui-tbb--active-labels .ui-tbb__btn:not(.is-on) .ui-tbb__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.ui-tbb--floating { margin: 0 16px 12px; border: 1px solid var(--aui-border, rgba(0, 0, 0, 0.08)); border-radius: 999px; box-shadow: var(--ds-elevation-2, 0 8px 24px -8px rgba(0, 0, 0, 0.2)); padding: 6px 12px; }
+.ui-tbb--floating.is-fixed { left: 16px; right: 16px; bottom: 12px; margin: 0; }
+@media (prefers-reduced-motion: reduce) { .ui-tbb__ic { transition: none; } }

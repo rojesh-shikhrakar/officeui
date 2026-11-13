@@ -1,4 +1,4 @@
-<!-- Button – ported from affectUI (MIT). Primary, secondary, ghost and destructive, three sizes, loading shimmer, width morph. -->
+<!-- Button – primary, secondary, ghost and destructive, three sizes, loading shimmer, width morph. -->
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
@@ -7,7 +7,9 @@
 
 	type Props = HTMLButtonAttributes & {
 		/** primary: a dark chip · secondary: white with a hairline shadow · ghost: text only · destructive: a light red fill */
-		variant?: 'primary' | 'secondary' | 'ghost' | 'destructive';
+		variant?: 'primary' | 'accent' | 'secondary' | 'ghost' | 'destructive' | 'danger' | 'link';
+		/** Stretch to the width of the container */
+		fullWidth?: boolean;
 		size?: 'sm' | 'md' | 'lg';
 		/** Shows a shimmer over the label and blocks clicks */
 		loading?: boolean;
@@ -23,6 +25,7 @@
 
 	let {
 		variant = 'primary',
+		fullWidth = false,
 		size = 'md',
 		loading = false,
 		label,
@@ -33,11 +36,13 @@
 		type = 'button',
 		onclick,
 		onpointerenter,
+		onpointermove,
 		el = $bindable(),
 		...rest
 	}: Props = $props();
 
-	const tone = $derived(['primary', 'secondary', 'ghost', 'destructive'].includes(variant) ? variant : 'primary');
+	// "danger" is an alias of "destructive"
+	const tone = $derived(variant === 'danger' ? 'destructive' : ['primary', 'accent', 'secondary', 'ghost', 'destructive', 'link'].includes(variant) ? variant : 'primary');
 	const scale = $derived(['sm', 'md', 'lg'].includes(size) ? size : 'md');
 	const hasLabel = $derived(Boolean(children || label));
 	const iconOnly = $derived(!hasLabel && Boolean(icon || iconRight));
@@ -69,6 +74,7 @@
 	class={['ui-buttonc', cls]}
 	data-variant={tone}
 	data-size={scale}
+	data-block={fullWidth || undefined}
 	data-loading={loading || undefined}
 	data-icon-only={iconOnly || undefined}
 	data-icon-left={(!iconOnly && Boolean(icon)) || undefined}
@@ -79,6 +85,13 @@
 	onclick={(e) => {
 		if (loading) return e.preventDefault();
 		onclick?.(e);
+	}}
+	onpointermove={(e) => {
+		// Feeds the theme's pointer glow (--mx/--my); unused by the default look
+		const r = e.currentTarget.getBoundingClientRect();
+		e.currentTarget.style.setProperty('--mx', `${e.clientX - r.left}px`);
+		e.currentTarget.style.setProperty('--my', `${e.clientY - r.top}px`);
+		onpointermove?.(e);
 	}}
 	onpointerenter={(e) => {
 		// A label cut short shows its full text on hover

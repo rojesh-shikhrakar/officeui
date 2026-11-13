@@ -1,4 +1,4 @@
-<!-- Glow Cloud – ported from affectUI (MIT). A glowing coloured cloud with white-glow edges and eyes that floats, looks around, follows the pointer and blinks. -->
+<!-- Glow Cloud – A glowing coloured cloud with white-glow edges and eyes that floats, looks around, follows the pointer and blinks. -->
 <script lang="ts" module>
 	const PUFFS = [
 		{ cx: 115, cy: 93, r: 43 },

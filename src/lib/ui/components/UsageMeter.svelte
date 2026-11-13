@@ -4,10 +4,10 @@
 </script>
 
 <script lang="ts">
-	import { series } from '../agents/chart';
+	import { series } from '../utils/chart';
 	import NumberTicker from '../motion/NumberTicker.svelte';
 	import { onMount } from 'svelte';
-	import { play } from '../agents/script';
+	import { play } from '../utils/script';
 	import '../agents/agents.css';
 	let {
 		product = 'Workspace AI',

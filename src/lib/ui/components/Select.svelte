@@ -1,4 +1,4 @@
-<!-- Select – ported from affectUI (MIT). Pick one option in the Text Field's look: popover list, gliding highlight, typeahead. -->
+<!-- Select – pick one option in the Text Field's look: popover list, gliding highlight, typeahead. -->
 <script lang="ts" module>
 	export type SelectOption = { value: string; label: string; description?: string; disabled?: boolean };
 </script>

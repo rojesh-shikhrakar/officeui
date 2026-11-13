@@ -1,0 +1,7 @@
+.ui-stat { display: grid; gap: 4px; font-family: var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); color: var(--aui-ink, rgba(0, 0, 0, 0.88)); }
+.ui-stat p { margin: 0; }
+.ui-stat__label { font-size: 12px; line-height: 16px; color: var(--aui-muted, rgba(0, 0, 0, 0.55)); }
+.ui-stat__value { font-size: 24px; line-height: 30px; font-weight: 600; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.ui-stat--lg .ui-stat__value { font-size: 36px; line-height: 42px; }
+.ui-stat__unit { margin-left: 4px; font-size: 0.5em; font-weight: 500; color: var(--aui-muted, rgba(0, 0, 0, 0.55)); }
+.ui-stat__foot { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--aui-muted, rgba(0, 0, 0, 0.55)); }

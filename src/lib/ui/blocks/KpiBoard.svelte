@@ -1,6 +1,6 @@
 <!-- KPI Board – the top of a dashboard: three trend cards, an overview chart comparing this period with the last, and a product card. -->
 <script lang="ts">
-	import { series, linePath, areaPath } from '../agents/chart';
+	import { series, linePath, areaPath } from '../utils/chart';
 	import Sparkline from './Sparkline.svelte';
 	import '../agents/agents.css';
 	let {

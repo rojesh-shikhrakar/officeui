@@ -3,7 +3,7 @@
 	import AppShell from './shell/AppShell.svelte';
 	import KpiChart from '../components/KpiChart.svelte';
 	import Sparkline from '../blocks/Sparkline.svelte';
-	import { series, linePath } from '../agents/chart';
+	import { series, linePath } from '../utils/chart';
 	import './shell/screen.css';
 	let { onexport, onsave }: { onexport?: () => void; onsave?: () => void } = $props();
 	let active = $state('revenue');

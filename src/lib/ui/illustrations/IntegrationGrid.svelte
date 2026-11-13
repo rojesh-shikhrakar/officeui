@@ -1,4 +1,4 @@
-<!-- Integration Grid – ported from affectUI (MIT). A honeycomb-like wall of integration tiles around a bright centre tile, fading to the edges. -->
+<!-- Integration Grid – A honeycomb-like wall of integration tiles around a bright centre tile, fading to the edges. -->
 <script lang="ts" module>
 	export type IntegrationGridLogo = { name: string; /** One path on a 24×24 viewBox */ path: string; color?: string; darkColor?: string };
 	const STEP = 160;
@@ -19,7 +19,7 @@
 
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { MARKS } from './marks';
+	import { MARKS } from '../utils/marks';
 	import './integration-grid.css';
 
 	let {

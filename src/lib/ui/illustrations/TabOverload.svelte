@@ -1,4 +1,4 @@
-<!-- Tab Overload – ported from affectUI (MIT). Overlapping browser windows where the highlight follows the hovered window. -->
+<!-- Tab Overload – Overlapping browser windows where the highlight follows the hovered window. -->
 <script lang="ts">
 	import './tab-overload.css';
 	let { label = 'Three overlapping browser windows full of placeholder content', class: cls }: { label?: string; class?: string } = $props();

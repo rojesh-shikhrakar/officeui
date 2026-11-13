@@ -1,0 +1,15 @@
+.ui-lnk {
+  font: inherit; color: var(--aui-blue, #0060e2); text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 38%, transparent);
+  text-decoration-thickness: 1px; text-underline-offset: 3px; border-radius: 2px; cursor: pointer; transition: text-decoration-color 120ms ease, color 120ms ease;
+}
+.ui-lnk:hover { text-decoration-color: currentColor; }
+.ui-lnk:focus-visible { outline: 2px solid var(--aui-focus, rgba(0, 96, 226, 0.7)); outline-offset: 2px; }
+.ui-lnk .ui-lnk__ic { display: inline-block; vertical-align: -2px; margin-left: 4px; transition: transform 160ms ease; }
+.ui-lnk:hover .ui-lnk__ic { transform: translateX(2px); }
+.ui-lnk--subtle { color: inherit; text-decoration-color: var(--aui-border, rgba(0, 0, 0, 0.2)); }
+.ui-lnk--subtle:hover { color: var(--aui-blue, #0060e2); }
+.ui-lnk--standalone { display: inline-flex; align-items: center; font-weight: 600; text-decoration: none; }
+.ui-lnk--standalone .ui-lnk__ic { margin-left: 6px; }
+.ui-lnk[aria-current="page"] { text-decoration-thickness: 2px; text-decoration-color: currentColor; }
+.ui-lnk.is-disabled { color: var(--aui-muted, rgba(0, 0, 0, 0.4)); text-decoration: none; pointer-events: none; cursor: not-allowed; }
+.ui-lnk__sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

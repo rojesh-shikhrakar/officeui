@@ -7,7 +7,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import ChatComposer from './ChatComposer.svelte';
-	import { play } from './script';
+	import { play } from '../utils/script';
 	import './agents.css';
 	let {
 		intro = 'Three tasks wait on you – everything else keeps running.',

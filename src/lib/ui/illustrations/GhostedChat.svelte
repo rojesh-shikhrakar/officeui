@@ -1,4 +1,4 @@
-<!-- Ghosted Chat – ported from affectUI (MIT). Unanswered messages marked as read, with a thumbs-down reply on hover. -->
+<!-- Ghosted Chat – Unanswered messages marked as read, with a thumbs-down reply on hover. -->
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import './ghosted-chat.css';

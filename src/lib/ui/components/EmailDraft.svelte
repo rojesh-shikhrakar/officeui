@@ -1,4 +1,4 @@
-<!-- Email Draft – ported from affectUI (MIT). An agent-written email for review: recipient menu, tones, inline edit, attach, send with undo. -->
+<!-- Email Draft – An agent-written email for review: recipient menu, tones, inline edit, attach, send with undo. -->
 <script lang="ts" module>
 	export type DraftContact = { name: string; email: string };
 	export type DraftTone = { id: string; label: string; body: (contact: DraftContact) => string };

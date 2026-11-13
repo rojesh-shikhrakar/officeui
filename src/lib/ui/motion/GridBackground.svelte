@@ -1,4 +1,4 @@
-<!-- Grid Background – ported from affectUI (MIT). A fine line grid that drifts slowly behind your content and fades out to the edges. -->
+<!-- Grid Background – A fine line grid that drifts slowly behind your content and fades out to the edges. -->
 <script lang="ts" module>
 	export type GridDirection = 'up' | 'down' | 'left' | 'right' | 'diagonal';
 	const offsets: Record<GridDirection, [number, number]> = { up: [0, -1], down: [0, 1], left: [-1, 0], right: [1, 0], diagonal: [-1, 1] };

@@ -15,6 +15,8 @@
 		return [Math.cos(th) * r, y, Math.sin(th) * r] as const;
 	}));
 	const labels: Record<OrbState, string> = { idle: 'Idle', listening: 'Listening …', thinking: 'Thinking …', speaking: 'Speaking …' };
+	let m = 0;
+	const ptr = { x: -1e4, y: -1e4 };
 	function draw(t: number) {
 		const c = canvas?.getContext('2d');
 		if (!c || !canvas) return;
@@ -25,16 +27,41 @@
 		const R = size * 0.42,
 			cx = size / 2,
 			cy = size / 2;
-		const spin = t * (mode === 'thinking' ? 0.0012 : 0.0003);
+		m += ((mode === 'thinking' ? 1 : 0) - m) * 0.06; // sphere ↔ möbius morph
+		const rows = 6,
+			cols = Math.ceil(dots / rows);
+		const spin = t * (mode === 'thinking' ? 0.0008 : 0.0003);
+		const rect = canvas.getBoundingClientRect();
+		const mx = ptr.x - rect.left,
+			my = ptr.y - rect.top,
+			reach = size * 0.28;
 		const amp = mode === 'idle' ? 0.02 * Math.sin(t / 900) : mode === 'listening' ? 0.05 : mode === 'speaking' ? 0.08 * Math.abs(Math.sin(t / 160)) : 0.03;
-		for (const [x0, y, z0] of pts) {
+		for (const [i, [sx, sy, sz]] of pts.entries()) {
+			// möbius strip: dots flow along the band (u) across its width (v)
+			const u = (Math.floor(i / rows) / cols) * Math.PI * 2 + t * 0.0006,
+				v = ((i % rows) / (rows - 1)) * 2 - 1,
+				w = (1 + (v / 2) * Math.cos(u / 2)) / 1.5;
+			const x0 = sx + (w * Math.cos(u) - sx) * m,
+				y = sy + (w * Math.sin(u) - sy) * m,
+				z0 = sz + (((v / 2) * Math.sin(u / 2)) / 1.5 - sz) * m;
 			const x = x0 * Math.cos(spin) - z0 * Math.sin(spin),
 				z = x0 * Math.sin(spin) + z0 * Math.cos(spin);
 			const wob = mode === 'listening' ? Math.sin(y * 9 + t / 120) * amp : amp;
 			const k = 1 + wob;
 			const front = (z + 1) / 2;
+			let px = cx + x * R * k,
+				py = cy + y * R * k;
+			// push dots away from the cursor
+			const dx = px - mx,
+				dy = py - my,
+				d = Math.hypot(dx, dy);
+			if (d < reach && d > 0) {
+				const f = (1 - d / reach) ** 2 * reach * 0.5;
+				px += (dx / d) * f;
+				py += (dy / d) * f;
+			}
 			c.beginPath();
-			c.arc(cx + x * R * k, cy + y * R * k, 0.6 + front * 1.6, 0, Math.PI * 2);
+			c.arc(px, py, 0.6 + front * 1.6, 0, Math.PI * 2);
 			c.fillStyle = `rgba(${Math.round(40 + (1 - front) * 60)}, ${Math.round(90 + (1 - front) * 30)}, ${Math.round(240 - (1 - front) * 150)}, ${0.35 + front * 0.65})`;
 			c.fill();
 		}
@@ -44,7 +71,15 @@
 		let raf = 0;
 		const loop = (t: number) => (draw(t), still || (raf = requestAnimationFrame(loop)));
 		raf = requestAnimationFrame(loop);
-		return () => cancelAnimationFrame(raf);
+		const move = (e: PointerEvent) => ((ptr.x = e.clientX), (ptr.y = e.clientY));
+		const leave = () => ((ptr.x = -1e4), (ptr.y = -1e4));
+		addEventListener('pointermove', move);
+		document.addEventListener('pointerleave', leave);
+		return () => {
+			cancelAnimationFrame(raf);
+			removeEventListener('pointermove', move);
+			document.removeEventListener('pointerleave', leave);
+		};
 	});
 	$effect(() => {
 		void [mode, size, pts];

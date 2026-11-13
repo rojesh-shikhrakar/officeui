@@ -1,4 +1,4 @@
-<!-- Integration Beam – ported from affectUI (MIT). Your product between the tools it connects: pulses travel in and out, tap a tool to pause it, layout morphs when it stacks. -->
+<!-- Integration Beam – Your product between the tools it connects: pulses travel in and out, tap a tool to pause it, layout morphs when it stacks. -->
 <script lang="ts" module>
 	export type BeamTool = { name: string; /** A path on a 24×24 viewBox */ d: string; color?: string };
 	export type BeamCenter = { name: string };
@@ -18,7 +18,7 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
 	import { SvelteSet } from 'svelte/reactivity';
-	import { MARKS } from './marks';
+	import { MARKS } from '../utils/marks';
 	import './integration-beam.css';
 
 	const toTool = (i: number): BeamTool => ({ name: MARKS[i].name, d: MARKS[i].d, color: MARKS[i].color });

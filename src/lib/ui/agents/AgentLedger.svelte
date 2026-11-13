@@ -6,7 +6,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Mark from './Mark.svelte';
-	import { play, tick } from './script';
+	import { play, tick } from '../utils/script';
 	import './agents.css';
 	const X = (id: string, verb: string, object: string, after: string, tool: number, app: string, at: number, extra: Partial<Change> = {}): Change => ({ id, verb, object, after, tool, app, at, ...extra });
 	let {

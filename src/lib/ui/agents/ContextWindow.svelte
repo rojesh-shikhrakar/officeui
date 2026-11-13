@@ -6,7 +6,7 @@
 <script lang="ts">
 	import NumberTicker from '../motion/NumberTicker.svelte';
 	import { onMount } from 'svelte';
-	import { play } from './script';
+	import { play } from '../utils/script';
 	import './agents.css';
 	let {
 		model = 'sonnet-5-5',

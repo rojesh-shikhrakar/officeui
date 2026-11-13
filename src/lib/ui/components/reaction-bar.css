@@ -1,4 +1,4 @@
-/* Ported from affectUI (components/reaction-bar-clean.tsx), MIT License (c) 2026 Florian Höller. */
+/* Based on components/reaction-bar-clean.tsx. */
 
 .ui-rbc {
   --ui-rbc-ink: var(--aui-ink, rgba(0, 0, 0, 0.88));

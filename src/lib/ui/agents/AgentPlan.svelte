@@ -7,7 +7,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { flip } from 'svelte/animate';
-	import { play, tick } from './script';
+	import { play, tick } from '../utils/script';
 	import './agents.css';
 	let {
 		title = 'Prepare the Q3 board update',

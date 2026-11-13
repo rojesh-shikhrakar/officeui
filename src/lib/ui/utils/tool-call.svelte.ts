@@ -1,4 +1,4 @@
-// Helpers shared by ToolCallCard and ToolCallGroup – ported from affectUI (MIT).
+// Helpers shared by ToolCallCard and ToolCallGroup – 
 export type ToolCallStatus = 'running' | 'success' | 'error';
 export type ToolCall = {
 	/** Tool name as the agent calls it, shown in mono */

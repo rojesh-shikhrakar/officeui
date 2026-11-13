@@ -77,6 +77,23 @@ Import components by name from the package root:
 </script>
 ```
 
+## Theming
+
+Import the tokens once (e.g. in your root layout), then opt in on an ancestor such as `<html>`:
+
+```svelte
+<script lang="ts">
+	import 'officeui/tokens.css';
+	import 'officeui/theme-officeui.css'; // optional theme
+</script>
+```
+
+```html
+<html data-ds data-ds-theme="officeui" data-theme="dark"> <!-- data-theme="dark" is optional -->
+```
+
+Override tier 1 (`--p-*`) or tier 2 (`--ds-*`) variables to customise; see the header of `tokens.css`.
+
 ## Roadmap
 
 OfficeUI is intended to evolve into a reusable design system for agentic management, covering:

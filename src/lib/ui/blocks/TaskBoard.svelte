@@ -4,7 +4,7 @@
 </script>
 
 <script lang="ts">
-	import { avatarUrl } from '../illustrations/avatar';
+	import { avatarUrl } from '../utils/avatar';
 	import '../agents/agents.css';
 	const LABEL: Record<string, string> = { Website: '#0ea5e9', Feature: '#7dd3fc', Billing: '#a855f7', Bug: '#ec4899', Mobile: '#10b981' };
 	let {

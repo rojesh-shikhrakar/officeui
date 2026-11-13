@@ -1,14 +1,5 @@
 #!/bin/sh
 set -e
-
-echo "🔍 Running pre-commit checks..."
-
-echo "🧪 Running Vitest (single run, non-watch mode)..."
-bunx vitest run
-
-# 2. Verify Storybook builds cleanly (catches broken stories/imports)
-echo "📖 Building Storybook to catch broken stories/imports..."
-bun run build-storybook --quiet
-
-echo "✅ All checks passed! Proceeding with commit..."
-
+# Fast gate only; tests and the Storybook build run in CI (.github/workflows/ci.yml).
+node scripts/gen-index.mjs --check
+bun run check

@@ -1,0 +1,10 @@
+.ui-emp { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 40px 24px; text-align: center; color: var(--aui-ink, rgba(0, 0, 0, 0.88)); font: 400 13px/20px var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); }
+.ui-emp--card { background: var(--aui-surface, #fff); border: 1px solid var(--aui-border, rgba(0, 0, 0, 0.1)); border-radius: var(--aui-radius-lg, 14px); }
+.ui-emp--dashed { border: 1px dashed var(--aui-border, rgba(0, 0, 0, 0.2)); border-radius: var(--aui-radius-lg, 14px); }
+.ui-emp--sm { padding: 20px 16px; gap: 4px; }
+.ui-emp__icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--aui-subtle, rgba(0, 0, 0, 0.05)); color: var(--aui-muted, rgba(0, 0, 0, 0.55)); }
+.ui-emp--sm .ui-emp__icon { width: 36px; height: 36px; }
+.ui-emp__title { margin: 4px 0 0; font-size: 15px; line-height: 22px; font-weight: 600; }
+.ui-emp--sm .ui-emp__title { font-size: 13px; }
+.ui-emp__desc { margin: 0; max-width: 40ch; color: var(--aui-muted, rgba(0, 0, 0, 0.55)); }
+.ui-emp__act { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }

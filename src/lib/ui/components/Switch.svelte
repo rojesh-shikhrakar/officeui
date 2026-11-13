@@ -1,4 +1,4 @@
-<!-- Switch – ported from affectUI (MIT). A real checkbox with role="switch", label, second line, start or end placement. -->
+<!-- Switch – A real checkbox with role="switch", label, second line, start or end placement. -->
 <script lang="ts">
 	import type { HTMLInputAttributes } from 'svelte/elements';
 	import './switch.css';

@@ -5,7 +5,7 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { play } from './script';
+	import { play } from '../utils/script';
 	import './agents.css';
 	let {
 		instruction = 'Make it shorter',
@@ -60,7 +60,7 @@
 				{#if typeof p === 'string'}{p}{:else if decided[i] === 'yes'}{#if p.add}<span class="ui-idf__ok">{p.add}</span>{:else}<span class="ui-idf__gone"></span>{/if}{:else if decided[i] === 'no'}{p.del}{:else}
 					<span class="ui-idf__edit" data-focus={current === i || undefined}>
 						<span class="ui-idf__chg" role="button" tabindex="0" aria-label="Suggestion {edits.indexOf(i) + 1} of {edits.length}: {p.add ? `replace “${p.del.trim()}” with “${p.add}”` : `remove “${p.del.trim()}”`}. Press Y to accept, N to reject." onclick={() => (focus = edits.indexOf(i))} onkeydown={(e) => e.key === 'Enter' && (focus = edits.indexOf(i))}><del>{p.del}</del>{#if p.add} <ins>{p.add}</ins>{/if}</span>
-						{#if current === i}<span class="ui-idf__pop ui-ag-in"><button class="ui-ag-btn" data-variant="primary" aria-label="Accept suggestion" onclick={() => decide('yes', i)}>✓ Accept <span class="ui-ag-kbd">Y</span></button><button class="ui-ag-btn" aria-label="Reject suggestion" onclick={() => decide('no', i)}>× Reject <span class="ui-ag-kbd">N</span></button></span>{/if}
+						{#if current === i}<span class="ui-idf__pop ui-ag-in"><button class="ui-ag-btn" data-variant="primary" aria-keyshortcuts="Y" onclick={() => decide('yes', i)}><span aria-hidden="true">✓</span> Accept <span class="ui-ag-kbd" aria-hidden="true">Y</span></button><button class="ui-ag-btn" aria-keyshortcuts="N" onclick={() => decide('no', i)}><span aria-hidden="true">×</span> Reject <span class="ui-ag-kbd" aria-hidden="true">N</span></button></span>{/if}
 					</span>
 				{/if}
 			{/each}

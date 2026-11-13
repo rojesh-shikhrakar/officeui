@@ -1,0 +1,22 @@
+.ui-tgl { --h: 32px; position: relative; display: inline-flex; align-items: center; font-family: var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); font-size: 13px; }
+.ui-tgl--sm { --h: 28px; font-size: 12px; } .ui-tgl--lg { --h: 36px; font-size: 14px; }
+.ui-tgl--block { display: flex; } .ui-tgl--block .ui-tgl__btn { flex: 1; }
+.ui-tgl__btn { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: var(--h); padding: 0 12px; border: 0; background: none; font: inherit; font-weight: 500; color: var(--aui-muted, rgba(0, 0, 0, 0.6)); cursor: pointer; transition: color 140ms, background-color 140ms; }
+.ui-tgl__btn.is-icon { padding: 0; width: var(--h); }
+.ui-tgl__btn:hover:not(:disabled):not(.is-on) { color: var(--aui-ink, rgba(0, 0, 0, 0.88)); }
+.ui-tgl__btn.is-on { color: var(--aui-ink, rgba(0, 0, 0, 0.88)); }
+.ui-tgl__btn:focus-visible { outline: 2px solid var(--aui-focus, rgba(0, 96, 226, 0.7)); outline-offset: 1px; }
+.ui-tgl__btn:disabled { opacity: 0.4; cursor: default; }
+.ui-tgl--segmented { padding: 2px; border-radius: calc(var(--aui-radius, 7px) + 2px); background: var(--aui-subtle, rgba(0, 0, 0, 0.05)); }
+.ui-tgl--segmented .ui-tgl__btn { height: calc(var(--h) - 4px); border-radius: var(--aui-radius, 7px); }
+.ui-tgl--segmented:has(.ui-tgl__ink) .ui-tgl__btn.is-on { background: none; }
+.ui-tgl--segmented .ui-tgl__btn.is-on { background: var(--aui-surface, #fff); box-shadow: 0 0 0 0.5px var(--aui-border, rgba(0, 0, 0, 0.08)), 0 1px 2px rgba(0, 0, 0, 0.08); }
+.ui-tgl--segmented:has(.ui-tgl__ink) .ui-tgl__btn.is-on { box-shadow: none; }
+.ui-tgl__ink { position: absolute; z-index: 0; left: 0; top: 2px; bottom: 2px; border-radius: var(--aui-radius, 7px); background: var(--aui-surface, #fff); box-shadow: 0 0 0 0.5px var(--aui-border, rgba(0, 0, 0, 0.08)), 0 1px 2px rgba(0, 0, 0, 0.08); }
+.ui-tgl__ink.is-ready { transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), width 240ms cubic-bezier(0.22, 1, 0.36, 1); }
+.ui-tgl--outline .ui-tgl__btn { box-shadow: 0 0 0 0.5px var(--aui-border, rgba(0, 0, 0, 0.14)); background: var(--aui-surface, #fff); margin-left: 1px; }
+.ui-tgl--outline .ui-tgl__btn:first-child { border-radius: var(--aui-radius, 7px) 0 0 var(--aui-radius, 7px); margin-left: 0; }
+.ui-tgl--outline .ui-tgl__btn:last-child { border-radius: 0 var(--aui-radius, 7px) var(--aui-radius, 7px) 0; }
+.ui-tgl--outline .ui-tgl__btn:only-child { border-radius: var(--aui-radius, 7px); }
+.ui-tgl--outline .ui-tgl__btn.is-on { background: var(--aui-subtle, rgba(0, 0, 0, 0.07)); }
+@media (prefers-reduced-motion: reduce) { .ui-tgl__ink.is-ready { transition: none; } }

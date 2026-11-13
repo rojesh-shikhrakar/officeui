@@ -1,0 +1,4 @@
+.ui-fld { display: flex; flex-direction: column; gap: 6px; font-family: var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); }
+.ui-fld__label { font: 600 12px/16px var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); color: var(--aui-ink, rgba(0, 0, 0, 0.88)); }
+.ui-fld__hint { font-size: 13px; line-height: 20px; color: var(--aui-muted, rgba(0, 0, 0, 0.5)); }
+.ui-fld__error { font-size: 13px; line-height: 20px; font-weight: 500; color: var(--aui-danger, #c4320a); }

@@ -1,0 +1,13 @@
+.ui-prg { --ui-prg-tone: var(--aui-primary, rgba(0, 0, 0, 0.88)); --ui-prg-h: 8px; font: 400 13px/20px var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); color: var(--aui-ink, rgba(0, 0, 0, 0.88)); }
+.ui-prg--success { --ui-prg-tone: var(--aui-success, #1e8a4f); }
+.ui-prg--warning { --ui-prg-tone: var(--aui-warning, #d97706); }
+.ui-prg--danger { --ui-prg-tone: var(--aui-danger, #c4320a); }
+.ui-prg--sm { --ui-prg-h: 4px; }
+.ui-prg--lg { --ui-prg-h: 12px; }
+.ui-prg__head { display: flex; justify-content: space-between; margin-bottom: 6px; }
+.ui-prg__val { color: var(--aui-muted, rgba(0, 0, 0, 0.55)); font-variant-numeric: tabular-nums; }
+.ui-prg__track { position: relative; height: var(--ui-prg-h); border-radius: 999px; background: var(--aui-subtle, rgba(0, 0, 0, 0.08)); overflow: hidden; }
+.ui-prg__fill { height: 100%; border-radius: inherit; background: var(--ui-prg-tone); transition: width 300ms var(--aui-ease, ease); }
+.ui-prg__track.is-ind .ui-prg__fill { position: absolute; width: 40%; animation: ui-prg-sweep 1.4s ease-in-out infinite; }
+@keyframes ui-prg-sweep { from { left: -40%; } to { left: 100%; } }
+@media (prefers-reduced-motion: reduce) { .ui-prg__fill { transition: none; } .ui-prg__track.is-ind .ui-prg__fill { animation: none; left: 30%; } }

@@ -1,4 +1,4 @@
-<!-- Decision Inbox – ported from affectUI (MIT). Open decisions with two quick answers; answered ones confirm and fold away. -->
+<!-- Decision Inbox – Open decisions with two quick answers; answered ones confirm and fold away. -->
 <script lang="ts" module>
 	export type Decision = {
 		id: string;

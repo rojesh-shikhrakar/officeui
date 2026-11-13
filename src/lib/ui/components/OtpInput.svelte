@@ -1,4 +1,4 @@
-<!-- OTP Input – ported from affectUI (MIT). Verification code boxes with a gliding ring, paste, error shake, success pill and resend timer. -->
+<!-- OTP Input – Verification code boxes with a gliding ring, paste, error shake, success pill and resend timer. -->
 <script lang="ts" module>
 	export type OtpStatus = 'idle' | 'verifying' | 'error' | 'success';
 	const pad = (n: number) => String(n).padStart(2, '0');

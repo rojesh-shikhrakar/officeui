@@ -1,0 +1,13 @@
+.ui-pkr { position: relative; display: block; }
+.ui-pkr__trigger { --h: 32px; display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; box-sizing: border-box; height: var(--h); padding: 0 10px; border: 0; border-radius: var(--aui-radius, 7px); background: var(--aui-surface, #fff); color: var(--aui-ink, rgba(0, 0, 0, 0.88)); box-shadow: 0 0 0 0.5px var(--aui-border, rgba(0, 0, 0, 0.12)), 0 1px 2px rgba(0, 0, 0, 0.05); font: 13px/20px var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); text-align: left; cursor: pointer; transition: box-shadow 140ms; }
+.ui-pkr__trigger--sm { --h: 28px; } .ui-pkr__trigger--lg { --h: 36px; font-size: 14px; }
+.ui-pkr__trigger:hover:not(:disabled) { box-shadow: 0 0 0 0.5px var(--aui-border-strong, rgba(0, 0, 0, 0.2)), 0 1px 2px rgba(0, 0, 0, 0.06); }
+.ui-pkr__trigger:focus-visible, .ui-pkr__trigger[aria-expanded="true"] { outline: 0; box-shadow: 0 0 0 1px var(--aui-focus, rgba(0, 96, 226, 0.7)); }
+.ui-pkr__trigger.is-error { box-shadow: 0 0 0 1px var(--aui-danger, #c4320a); }
+.ui-pkr__trigger:disabled { opacity: 0.5; cursor: default; }
+.ui-pkr__trigger  > svg { flex: none; color: var(--aui-muted, rgba(0, 0, 0, 0.5)); }
+.ui-pkr__text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ui-pkr__text.is-ph { color: var(--aui-placeholder, rgba(0, 0, 0, 0.4)); }
+.ui-pkr__panel { position: absolute; z-index: 30; top: calc(100% + 6px); left: 0; min-width: 100%; box-sizing: border-box; padding: 8px; background: var(--aui-surface, #fff); color: var(--aui-ink, rgba(0, 0, 0, 0.88)); border: 1px solid var(--aui-border, rgba(0, 0, 0, 0.08)); border-radius: var(--aui-radius-lg, 12px); box-shadow: var(--ds-elevation-2, 0 2px 6px rgba(0, 0, 0, 0.05), 0 8px 24px -8px rgba(0, 0, 0, 0.12)); font-family: var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); animation: ui-pkr-in 160ms cubic-bezier(0.22, 1, 0.36, 1); }
+@keyframes ui-pkr-in { from { opacity: 0; transform: translateY(4px) scale(0.98); } }
+@media (prefers-reduced-motion: reduce) { .ui-pkr__panel { animation: none; } }

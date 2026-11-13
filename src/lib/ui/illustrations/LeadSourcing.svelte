@@ -1,7 +1,7 @@
-<!-- Lead Sourcing – ported from affectUI (MIT). A centre tile linked to two app tiles, with a shine running along the connection. -->
+<!-- Lead Sourcing – A centre tile linked to two app tiles, with a shine running along the connection. -->
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { mark, OWN_MARK, type Mark } from './marks';
+	import { mark, OWN_MARK, type Mark } from '../utils/marks';
 	import './lead-sourcing.css';
 
 	let {

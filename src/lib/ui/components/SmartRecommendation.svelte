@@ -1,4 +1,4 @@
-<!-- Smart Recommendation – ported from affectUI (MIT). Suggestion card with a confidence signal, alternatives and accept with undo. -->
+<!-- Smart Recommendation – Suggestion card with a confidence signal, alternatives and accept with undo. -->
 <script lang="ts" module>
 	export type Recommendation = {
 		id: string;

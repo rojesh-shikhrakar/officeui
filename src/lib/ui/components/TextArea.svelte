@@ -1,4 +1,4 @@
-<!-- Text Area – ported from affectUI (MIT). Auto-growing multi-line field with counter, expand button and ⌘/Ctrl+Enter. -->
+<!-- Text Area – Auto-growing multi-line field with counter, expand button and ⌘/Ctrl+Enter. -->
 <script lang="ts">
 	import type { HTMLTextareaAttributes } from 'svelte/elements';
 	import { onMount, tick } from 'svelte';

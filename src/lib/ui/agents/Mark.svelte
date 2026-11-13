@@ -1,6 +1,6 @@
 <!-- Mark – a small neutral app or model logo (geometric placeholder), by index into the shared marks. -->
 <script lang="ts">
-	import { mark } from '../illustrations/marks';
+	import { mark } from '../utils/marks';
 	let { i = 0, size = 13, label }: { i?: number; size?: number; label?: string } = $props();
 	const m = $derived(mark(i));
 </script>

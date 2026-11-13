@@ -1,4 +1,4 @@
-/* Ported from affectUI (components/smart-recommendation-clean.tsx), MIT License (c) 2026 Florian Höller. */
+/* Based on components/smart-recommendation-clean.tsx. */
 
 /* Colors and motion as variables – override them on .ui-src */
 .ui-src {

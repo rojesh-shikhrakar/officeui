@@ -1,6 +1,6 @@
-<!-- Enrichment Orbit – ported from affectUI (MIT). A tile inside two rings with comets and data nodes orbiting around it. -->
+<!-- Enrichment Orbit – A tile inside two rings with comets and data nodes orbiting around it. -->
 <script lang="ts">
-	import { OWN_MARK } from './marks';
+	import { OWN_MARK } from '../utils/marks';
 	import './enrichment-orbit.css';
 	let { label = 'A product tile with data nodes orbiting around it', mark = OWN_MARK, class: cls }: { label?: string; /** Path (24×24) for the centre tile */ mark?: string; class?: string } = $props();
 	const _pid = $props.id();

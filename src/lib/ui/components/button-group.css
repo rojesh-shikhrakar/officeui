@@ -1,0 +1,10 @@
+.ui-btng { display: inline-flex; align-items: center; }
+.ui-btng--spaced { gap: 8px; }
+.ui-btng--v { flex-direction: column; align-items: stretch; }
+/* Attached: neighbours share an edge, only the outer corners stay round */
+.ui-btng--attached > :not(:first-child) { border-top-left-radius: 0; border-bottom-left-radius: 0; margin-left: -1px; }
+.ui-btng--attached > :not(:last-child) { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.ui-btng--attached.ui-btng--v > :not(:first-child) { border-radius: 0; margin-left: 0; margin-top: -1px; border-bottom-left-radius: var(--aui-radius, 6px); border-bottom-right-radius: var(--aui-radius, 6px); }
+.ui-btng--attached.ui-btng--v > :not(:last-child) { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.ui-btng--attached.ui-btng--v > :not(:first-child):not(:last-child) { border-radius: 0; }
+.ui-btng > :hover, .ui-btng > :focus-visible { z-index: 1; }

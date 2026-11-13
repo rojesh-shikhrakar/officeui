@@ -1,4 +1,4 @@
-<!-- Text Field – ported from affectUI (MIT). Label, hint/error, prefix/suffix, clear, password reveal, copy and counter. -->
+<!-- Text Field – Label, hint/error, prefix/suffix, clear, password reveal, copy and counter. -->
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import type { HTMLInputAttributes } from 'svelte/elements';

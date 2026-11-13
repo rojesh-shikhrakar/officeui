@@ -1,0 +1,30 @@
+.ui-menu {
+  --ui-menu-hover: var(--aui-subtle, rgba(0, 0, 0, 0.05));
+  --ui-menu-danger: var(--aui-danger, #c4320a);
+  display: flex; flex-direction: column; min-width: 200px; outline: none;
+  font-family: var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif);
+}
+.ui-menu--bare { min-width: 0; }
+.ui-menu__item {
+  display: flex; align-items: center; gap: 10px; width: 100%; padding: 7px 10px; background: none; border: 0;
+  border-radius: var(--aui-radius-sm, 6px); text-align: left; color: var(--aui-ink, rgba(0, 0, 0, 0.88));
+  font: 500 13px/20px var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); cursor: pointer;
+  transition: background-color 100ms ease;
+}
+.ui-menu__item:hover:not(:disabled), .ui-menu__item:focus-visible, .ui-menu__subwrap:hover > .ui-menu__item { background: var(--ui-menu-hover); outline: none; }
+.ui-menu__item:focus-visible { box-shadow: inset 0 0 0 2px var(--aui-focus, rgba(0, 96, 226, 0.7)); }
+.ui-menu__item:disabled { opacity: 0.45; cursor: not-allowed; }
+.ui-menu__item--danger { color: var(--ui-menu-danger); }
+.ui-menu__item--danger:hover:not(:disabled), .ui-menu__item--danger:focus-visible { background: color-mix(in srgb, var(--ui-menu-danger) 10%, transparent); }
+.ui-menu__lead { display: inline-flex; width: 16px; flex: none; justify-content: center; color: var(--aui-muted, rgba(0, 0, 0, 0.5)); }
+.ui-menu__item--danger .ui-menu__lead { color: inherit; }
+.ui-menu__text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.ui-menu__desc { font-size: 12px; line-height: 16px; font-weight: 400; color: var(--aui-muted, rgba(0, 0, 0, 0.5)); }
+.ui-menu__short { font: 400 12px/16px ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--aui-muted, rgba(0, 0, 0, 0.5)); }
+.ui-menu__arrow { color: var(--aui-muted, rgba(0, 0, 0, 0.5)); flex: none; }
+.ui-menu__sep { height: 1px; margin: 4px -4px; background: var(--aui-border, rgba(0, 0, 0, 0.08)); }
+.ui-menu__label { padding: 8px 10px 4px; font: 600 11px/16px var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); letter-spacing: 0.04em; text-transform: uppercase; color: var(--aui-muted, rgba(0, 0, 0, 0.5)); }
+.ui-menu__subwrap { position: relative; }
+.ui-menu__sub { top: -5px; left: calc(100% + 2px); padding: 4px; }
+.ui-ctx { position: relative; }
+.ui-ctx__panel { position: fixed; }

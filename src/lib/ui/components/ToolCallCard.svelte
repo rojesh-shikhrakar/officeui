@@ -1,8 +1,8 @@
-<!-- Tool Call Card – ported from affectUI (MIT). An agent's tool call in one line: live timer, status, folds open to highlighted args and result, retry on errors. -->
+<!-- Tool Call Card – An agent's tool call in one line: live timer, status, folds open to highlighted args and result, retry on errors. -->
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import ToolCallCode from './ToolCallCode.svelte';
-	import { Stopwatch, formatMs, type ToolCallStatus } from './tool-call.svelte';
+	import { Stopwatch, formatMs, type ToolCallStatus } from '../utils/tool-call.svelte';
 	import './tool-call-card.css';
 
 	let {

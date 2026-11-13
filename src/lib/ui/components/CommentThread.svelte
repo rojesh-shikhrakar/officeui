@@ -1,4 +1,4 @@
-<!-- Comment Thread – ported from affectUI (MIT). One comment with replies, an assistant that answers, foldable status details. -->
+<!-- Comment Thread – One comment with replies, an assistant that answers, foldable status details. -->
 <script lang="ts" module>
 	export type ThreadAuthor = { name: string; avatar?: string; assistant?: boolean };
 	export type ThreadMessage = { id: string; author: ThreadAuthor; createdAt: Date | number; text: string; status?: string; details?: string[] };

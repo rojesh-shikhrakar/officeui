@@ -1,4 +1,4 @@
-<!-- Agent Team – ported from affectUI (MIT). A prompt types itself and branches out into three agents, each with a role and tool marks. -->
+<!-- Agent Team – A prompt types itself and branches out into three agents, each with a role and tool marks. -->
 <script lang="ts" module>
 	export type AgentTeamMember = { role: string; avatar: string; /** Up to two tool marks: index into the neutral mark set */ tools?: number[] };
 	const TYPE = 22;
@@ -11,8 +11,8 @@
 </script>
 
 <script lang="ts">
-	import { avatarUrl } from './avatar';
-	import { mark } from './marks';
+	import { avatarUrl } from '../utils/avatar';
+	import { mark } from '../utils/marks';
 	import './agent-team.css';
 
 	let {

@@ -1,0 +1,8 @@
+.ui-crumb { font: 500 13px/20px var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); }
+.ui-crumb ol { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.ui-crumb li { display: inline-flex; align-items: center; gap: 6px; }
+.ui-crumb a { color: var(--aui-muted, rgba(0, 0, 0, 0.5)); text-decoration: none; border-radius: var(--aui-radius-sm, 6px); transition: color 120ms ease; }
+.ui-crumb a:hover { color: var(--aui-ink, rgba(0, 0, 0, 0.88)); text-decoration: underline; text-underline-offset: 3px; }
+.ui-crumb a:focus-visible { outline: 2px solid var(--aui-focus, rgba(0, 96, 226, 0.7)); outline-offset: 2px; }
+.ui-crumb__sep { color: var(--aui-muted, rgba(0, 0, 0, 0.3)); opacity: 0.6; }
+.ui-crumb__cur { color: var(--aui-ink, rgba(0, 0, 0, 0.88)); }

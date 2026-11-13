@@ -4,7 +4,7 @@
 </script>
 
 <script lang="ts">
-	import { linePath, series } from '../agents/chart';
+	import { linePath, series } from '../utils/chart';
 	import '../agents/agents.css';
 	let {
 		title = 'Revenue',

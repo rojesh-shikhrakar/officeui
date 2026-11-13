@@ -1,0 +1,22 @@
+.ui-bsh {
+  position: relative; display: flex; flex-direction: column; width: 100%; max-width: 640px; outline: 0;
+  background: var(--aui-surface, #fff); color: var(--aui-ink, rgba(0, 0, 0, 0.88));
+  border: 1px solid var(--aui-border, rgba(0, 0, 0, 0.08)); border-bottom: 0; border-radius: var(--aui-radius-lg, 12px) var(--aui-radius-lg, 12px) 0 0;
+  box-shadow: var(--ds-elevation-2, 0 -8px 32px -8px rgba(0, 0, 0, 0.2));
+  font-family: var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif);
+  animation: ui-sheet-up 280ms cubic-bezier(0.22, 1, 0.36, 1); transition: height 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ui-bsh--peek { height: 28%; min-height: 168px; } .ui-bsh--half { height: 55%; } .ui-bsh--full { height: 92%; }
+.ui-bsh.is-modeless { position: fixed; left: 50%; bottom: 0; transform: translateX(-50%); z-index: 30; }
+.ui-bsh.is-modeless.is-inline { position: absolute; }
+.ui-bsh__grab { display: flex; justify-content: center; width: 100%; padding: 10px 0 6px; border: 0; background: none; cursor: grab; touch-action: none; }
+.ui-bsh__grab span { width: 40px; height: 4px; border-radius: 4px; background: var(--aui-border, rgba(0, 0, 0, 0.18)); filter: contrast(0.6); transition: width 160ms ease; }
+.ui-bsh__grab:hover span { width: 48px; background: var(--aui-muted, rgba(0, 0, 0, 0.5)); }
+.ui-bsh__grab:focus-visible { outline: 2px solid var(--aui-focus, rgba(0, 96, 226, 0.7)); outline-offset: -2px; border-radius: var(--aui-radius-lg, 12px); }
+.ui-bsh__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 20px 12px; }
+.ui-bsh__title { margin: 0; font-size: 16px; line-height: 24px; font-weight: 600; letter-spacing: -0.01em; }
+.ui-bsh__body { flex: 1; min-height: 0; overflow: auto; padding: 0 20px 20px; font-size: 14px; line-height: 22px; }
+.ui-bsh__foot { display: flex; justify-content: flex-end; gap: 12px; padding: 16px 20px; border-top: 1px solid var(--aui-border, rgba(0, 0, 0, 0.08)); }
+.ui-scrim--sheet { padding: 0; align-items: flex-end; }
+@keyframes ui-sheet-up { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .ui-bsh { animation: none; transition: none; } }

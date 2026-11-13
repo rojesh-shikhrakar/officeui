@@ -1,4 +1,4 @@
-<!-- Tips Panel – ported from affectUI (MIT). A grid of short tips with one action each and a done counter. -->
+<!-- Tips Panel – A grid of short tips with one action each and a done counter. -->
 <script lang="ts" module>
 	export type Tip = {
 		id: string;

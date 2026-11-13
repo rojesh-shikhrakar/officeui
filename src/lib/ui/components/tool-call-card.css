@@ -1,4 +1,4 @@
-/* Ported from affectUI (components/tool-call-card-clean.tsx), MIT License (c) 2026 Florian Höller. */
+/* Based on components/tool-call-card-clean.tsx. */
 
 /* Colors and motion as variables – override them on .ui-tclc / .ui-tclc-group */
 .ui-tclc,

@@ -1,7 +1,7 @@
 <!-- Tilt Card – tilts in 3D towards the pointer with a glare that follows it, and springs back when the pointer leaves. Default content is a member card. -->
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	let { max = 12, glare = true, name = 'Alex Morgan', since = '10/26', last4 = '4821', brand = 'moodUI', tier = 'Pro', children }: { max?: number; glare?: boolean; name?: string; since?: string; last4?: string; brand?: string; tier?: string; children?: Snippet } = $props();
+	let { max = 12, glare = true, name = 'Alex Morgan', since = '10/26', last4 = '4821', brand = 'OfficeUI', tier = 'Pro', children }: { max?: number; glare?: boolean; name?: string; since?: string; last4?: string; brand?: string; tier?: string; children?: Snippet } = $props();
 	let rx = $state(0),
 		ry = $state(0),
 		gx = $state(50),

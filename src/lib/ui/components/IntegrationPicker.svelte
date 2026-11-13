@@ -6,7 +6,7 @@
 <script lang="ts">
 	import '../agents/agents.css';
 	let {
-		product = 'moodUI',
+		product = 'OfficeUI',
 		services = $bindable([
 			{ id: 'tracker', name: 'Tracker', kind: 'Project management', color: '#5e6ad2', connected: true, blurb: 'Turn requests from chat into issues and keep their status in sync both ways.', features: ['Create issues from any message', 'Two-way status sync', 'Link issues to customers'] },
 			{ id: 'notes', name: 'Notes', kind: 'Docs & wiki', color: '#171717', connected: true },

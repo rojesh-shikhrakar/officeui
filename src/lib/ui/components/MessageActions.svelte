@@ -1,4 +1,4 @@
-<!-- Message Actions – ported from affectUI (MIT). The quiet bar under an AI message: copy, regenerate with versions, feedback with reasons, read aloud. -->
+<!-- Message Actions – The quiet bar under an AI message: copy, regenerate with versions, feedback with reasons, read aloud. -->
 <script lang="ts" module>
 	export type MessageActionKey = 'copy' | 'regenerate' | 'feedback' | 'speak';
 	export type FeedbackKind = 'up' | 'down';

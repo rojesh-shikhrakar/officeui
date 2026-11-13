@@ -1,4 +1,4 @@
-/* Ported from affectUI (components/segmented-control-clean.tsx), MIT License (c) 2026 Florian Höller. */
+/* Based on components/segmented-control-clean.tsx. */
 
 /* Animatable custom properties: the equal segment width and the soft edges glide too */
 @property --ui-segc-min { syntax: "<length>"; inherits: true; initial-value: 0px; }

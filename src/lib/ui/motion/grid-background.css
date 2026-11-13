@@ -1,4 +1,4 @@
-/* Ported from affectUI (motion/grid-background.tsx), MIT License (c) 2026 Florian Höller. */
+/* Based on motion/grid-background.tsx. */
 
 @property --ui-gb-r {
   syntax: "<percentage>";

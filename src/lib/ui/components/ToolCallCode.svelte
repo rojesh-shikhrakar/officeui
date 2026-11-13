@@ -1,7 +1,7 @@
 <!-- A labelled code block with copy and "Show all" (Tool Call Card helper) -->
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { toText, highlight, copyText } from './tool-call.svelte';
+	import { toText, highlight, copyText } from '../utils/tool-call.svelte';
 	let { label, value, cap }: { label: string; value: unknown; cap: number } = $props();
 	const OPEN_MAX = 640;
 	const t = $derived(toText(value));

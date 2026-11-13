@@ -1,4 +1,4 @@
-<!-- Filter Menu – ported from affectUI (MIT). Grouped filters with removable chips on one line, collapsible groups, Clear all and keyboard control. -->
+<!-- Filter Menu – Grouped filters with removable chips on one line, collapsible groups, Clear all and keyboard control. -->
 <script lang="ts" module>
 	export type FilterOption = { id: string; label: string };
 	export type FilterGroup = { id: string; label: string; options: FilterOption[]; /** e.g. "Score: " → "Score: 80–90" */ chipPrefix?: string };

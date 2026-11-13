@@ -1,4 +1,4 @@
-<!-- Frost Cloud – ported from affectUI (MIT). A frosted cloud with cut-out eyes that floats, looks around, follows the pointer and blinks. -->
+<!-- Frost Cloud – A frosted cloud with cut-out eyes that floats, looks around, follows the pointer and blinks. -->
 <script lang="ts" module>
 	const PUFFS = [
 		{ cx: 115, cy: 93, r: 43 },

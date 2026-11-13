@@ -1,4 +1,4 @@
-<!-- Shimmer Text – ported from affectUI (MIT). A light band sweeps across text, e.g. "Thinking…". -->
+<!-- Shimmer Text – A light band sweeps across text, e.g. "Thinking…". -->
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import './shimmer-loader.css';

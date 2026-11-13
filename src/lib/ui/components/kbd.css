@@ -1,0 +1,6 @@
+.ui-kbd {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; padding: 0 5px;
+  font: 500 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--aui-muted, rgba(0, 0, 0, 0.55));
+  background: var(--aui-subtle, rgba(0, 0, 0, 0.04)); border: 1px solid var(--aui-border, rgba(0, 0, 0, 0.1));
+  border-bottom-width: 2px; border-radius: 4px;
+}

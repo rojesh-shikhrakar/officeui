@@ -1,4 +1,4 @@
-<!-- Logo Cluster – ported from affectUI (MIT). Your mark on a white disc with app logos bouncing out around it. -->
+<!-- Logo Cluster – Your mark on a white disc with app logos bouncing out around it. -->
 <script lang="ts" module>
 	/** One bubble: mark, offset from the middle and diameter – in a 320 × 320 frame */
 	export type ClusterSlot = { color: string; d: string; x: number; y: number; size: number };
@@ -6,7 +6,7 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { mark, OWN_MARK } from './marks';
+	import { mark, OWN_MARK } from '../utils/marks';
 	import './logo-cluster.css';
 	const POS: [number, number, number][] = [
 		[-29, -97, 56],

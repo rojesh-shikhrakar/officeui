@@ -1,0 +1,14 @@
+.ui-ntc { --ui-ntc-tone: var(--aui-blue, #0060e2); display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border: 1px solid color-mix(in srgb, var(--ui-ntc-tone) 30%, transparent); border-radius: var(--aui-radius, 10px); background: color-mix(in srgb, var(--ui-ntc-tone) 8%, var(--aui-surface, #fff)); color: var(--aui-ink, rgba(0, 0, 0, 0.88)); font: 400 13px/20px var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); }
+.ui-ntc--success { --ui-ntc-tone: var(--aui-success, #1e8a4f); }
+.ui-ntc--warning { --ui-ntc-tone: var(--aui-warning, #d97706); }
+.ui-ntc--danger { --ui-ntc-tone: var(--aui-danger, #c4320a); }
+.ui-ntc--compact { padding: 8px 10px; gap: 8px; }
+.ui-ntc__glyph { color: var(--ui-ntc-tone); font-size: 10px; line-height: 20px; flex: none; }
+.ui-ntc__main { flex: 1; min-width: 0; }
+.ui-ntc__title { margin: 0; font-weight: 600; }
+.ui-ntc__body { margin: 0; color: var(--aui-muted, rgba(0, 0, 0, 0.6)); }
+.ui-ntc__body:empty { display: none; }
+.ui-ntc__action { margin-top: 8px; }
+.ui-ntc__x { all: unset; cursor: pointer; display: flex; padding: 3px; border-radius: var(--aui-radius-sm, 6px); color: var(--aui-muted, rgba(0, 0, 0, 0.55)); }
+.ui-ntc__x:hover { background: var(--aui-subtle, rgba(0, 0, 0, 0.06)); }
+.ui-ntc__x:focus-visible { outline: 2px solid var(--aui-focus, rgba(0, 96, 226, 0.7)); }

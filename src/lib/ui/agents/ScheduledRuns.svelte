@@ -6,7 +6,7 @@
 <script lang="ts">
 	import { flip } from 'svelte/animate';
 	import { onMount } from 'svelte';
-	import { play } from './script';
+	import { play } from '../utils/script';
 	import './agents.css';
 	let {
 		days = ['Tue 27', 'Wed 28', 'Thu 29'],
@@ -80,7 +80,7 @@
 				<small class="ui-sr__dh">{d}</small>
 				{#each slots as s, si (s)}
 					<!-- svelte-ignore a11y_no_noninteractive_element_interactions (click drops the picked card here; keyboard users can schedule with Auto) -->
-					<div class="ui-sr__slot" role="listitem" data-target={picked !== null || undefined} ondragover={(e) => e.preventDefault()} ondrop={drop(di, si)} onclick={(e) => picked !== null && e.target === e.currentTarget && place(picked, di, si)} onkeydown={() => {}}>
+					<div class="ui-sr__slot" role="group" aria-label="{d} {s}" data-target={picked !== null || undefined} ondragover={(e) => e.preventDefault()} ondrop={drop(di, si)} onclick={(e) => picked !== null && e.target === e.currentTarget && place(picked, di, si)} onkeydown={() => {}}>
 						{#each at(di, si) as r (r.id)}<div animate:flip={{ duration: 200 }}>{@render card(r)}</div>{/each}
 						<span class="ui-sr__load"><i style:width="{load(di, si)}%" data-full={load(di, si) >= 90 || undefined}></i></span>
 					</div>

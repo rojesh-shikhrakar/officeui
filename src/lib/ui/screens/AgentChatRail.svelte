@@ -42,7 +42,7 @@
 			<div class="ui-ag-row"><span class="ui-acr__ic">▦</span><span><b>{files[file]}</b><small>Just now</small></span></div>
 			{#if file === 0}
 				<div class="ui-ag-row ui-acr__fx"><span class="ui-ag-kbd">{cell}</span><span>fx</span><span>{rows[+cell.slice(1) - 1]?.[cell.charCodeAt(0) - 65] ?? ''}</span></div>
-				<table><thead><tr><th></th>{#each ['A', 'B', 'C', 'D'] as c (c)}<th>{c}</th>{/each}</tr></thead><tbody>{#each Array(8) as _, r (r)}<tr><th>{r + 1}</th>{#each [0, 1, 2, 3] as c (c)}<td aria-selected={cell === `${String.fromCharCode(65 + c)}${r + 1}`} onclick={() => (cell = `${String.fromCharCode(65 + c)}${r + 1}`)}>{rows[r]?.[c] ?? ''}</td>{/each}</tr>{/each}</tbody></table>
+				<table><thead><tr><th></th>{#each ['A', 'B', 'C', 'D'] as c (c)}<th>{c}</th>{/each}</tr></thead><tbody>{#each Array(8) as _, r (r)}<tr><th>{r + 1}</th>{#each [0, 1, 2, 3] as c (c)}<td aria-current={cell === `${String.fromCharCode(65 + c)}${r + 1}`} onclick={() => (cell = `${String.fromCharCode(65 + c)}${r + 1}`)}>{rows[r]?.[c] ?? ''}</td>{/each}</tr>{/each}</tbody></table>
 			{:else}
 				<p class="ui-ag-muted">1. Fabric weight guide – textile handbook<br />2. Linen care and creasing – mill notes<br />3. Seersucker for summer – fabric shop</p>
 			{/if}
@@ -167,7 +167,7 @@
 		cursor: cell;
 		min-width: 40px;
 	}
-	td[aria-selected='true'] {
+	td[aria-current='true'] {
 		outline: 1.5px solid var(--ag-green);
 		outline-offset: -1px;
 	}

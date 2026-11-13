@@ -5,7 +5,7 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { play } from '../agents/script';
+	import { play } from '../utils/script';
 	import '../agents/agents.css';
 	let {
 		templates = [

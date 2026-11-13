@@ -1,6 +1,6 @@
 <!-- Since You Looked – an activity curve for the time you were away with done / need-you / failed counts. Part of the mission blocks. -->
 <script lang="ts">
-	import { linePath, areaPath } from '../agents/chart';
+	import { linePath, areaPath } from '../utils/chart';
 	import { ACTIVITY } from './mission';
 	let { since = '9:44 AM', until = '10:29 AM', away = '45m', done = 4, needs = 2, failed = 1, values = ACTIVITY }: { since?: string; until?: string; away?: string; done?: number; needs?: number; failed?: number; values?: number[] } = $props();
 	const marks = [[3, 'ink'], [6, 'ink'], [13, 'ink'], [18, 'red'], [20, 'amber'], [22, 'amber'], [24, 'ink']] as const;

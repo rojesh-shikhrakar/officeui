@@ -1,4 +1,4 @@
-<!-- Layer Stack – ported from affectUI (MIT). An isometric stack of five layers with a list beside it; the chosen layer lifts off. -->
+<!-- Layer Stack – An isometric stack of five layers with a list beside it; the chosen layer lifts off. -->
 <script lang="ts" module>
 	export type LayerIcon = 'bolt' | 'database' | 'plug' | 'spark' | 'pulse';
 	export type LayerStackItem = { title: string; hint?: string; icon?: LayerIcon };

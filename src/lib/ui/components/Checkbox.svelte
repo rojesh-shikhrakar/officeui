@@ -1,4 +1,4 @@
-<!-- Checkbox – ported from affectUI (MIT). Label, second line, indeterminate, error and a card variant. -->
+<!-- Checkbox – label, second line, indeterminate, error and a card variant. -->
 <script lang="ts">
 	import type { HTMLInputAttributes } from 'svelte/elements';
 	import './checkbox.css';

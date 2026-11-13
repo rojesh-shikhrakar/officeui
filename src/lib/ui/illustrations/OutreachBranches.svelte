@@ -1,6 +1,6 @@
 <!-- Outreach Branches – lines branch out from one point to three app tiles with coloured pulses flowing down them; hover a tile to light its branch. -->
 <script lang="ts">
-	import { mark, type Mark } from './marks';
+	import { mark, type Mark } from '../utils/marks';
 	let { apps = [mark(9), mark(3), mark(11)] as Mark[] }: { apps?: Mark[] } = $props();
 	let hot = $state(1);
 	const xs = [60, 180, 300];

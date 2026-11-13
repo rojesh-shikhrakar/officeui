@@ -1,4 +1,4 @@
-<!-- Shimmer Loader – a loading card built from Skeleton and ShimmerText (ported from affectUI, MIT). -->
+<!-- Shimmer Loader – a loading card built from Skeleton and ShimmerText (-->
 <script lang="ts">
 	import Skeleton from './Skeleton.svelte';
 	import ShimmerText from './ShimmerText.svelte';

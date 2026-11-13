@@ -1,4 +1,4 @@
-/* Ported from affectUI (illustrations/side-folder.tsx), MIT License (c) 2026 Florian Höller. */
+/* Based on illustrations/side-folder.tsx. */
 
 .ui-sf {
   --ui-sf-ease: cubic-bezier(0.2, 0.85, 0.25, 1);

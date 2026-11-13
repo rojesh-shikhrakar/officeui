@@ -1,4 +1,4 @@
-<!-- Empty Calendar – ported from affectUI (MIT). Stacked calendar cards marked empty, fanning out on hover. -->
+<!-- Empty Calendar – Stacked calendar cards marked empty, fanning out on hover. -->
 <script lang="ts">
 	import './empty-calendar.css';
 	let { label = 'Stacked calendar cards marked empty, with a disabled join meeting button', class: cls }: { label?: string; class?: string } = $props();

@@ -1,4 +1,4 @@
-<!-- Change Summary – ported from affectUI (MIT). What moved since last time, one metric per row. -->
+<!-- Change Summary – What moved since last time, one metric per row. -->
 <script lang="ts" module>
 	export type MetricChange = {
 		label: string;

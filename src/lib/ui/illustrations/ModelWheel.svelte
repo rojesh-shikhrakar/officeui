@@ -1,4 +1,4 @@
-<!-- Model Wheel – ported from affectUI (MIT). Model names on a turning 3D drum: auto-turns, drag and fling with detents, springs onto a row. -->
+<!-- Model Wheel – Model names on a turning 3D drum: auto-turns, drag and fling with detents, springs onto a row. -->
 <script lang="ts" module>
 	export type WheelModel = { name: string; viewBox?: string; color: string; d: string };
 	const ROW = 44;
@@ -9,7 +9,7 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { MARKS } from './marks';
+	import { MARKS } from '../utils/marks';
 	import './model-wheel.css';
 
 	const NAMES = ['Fable 5.1', 'Sol 6', 'Flash 3.8', 'Atlas 2', 'Echo Pro', 'Nimbus', 'Orion 4', 'Quill'];

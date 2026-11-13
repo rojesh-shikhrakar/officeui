@@ -1,4 +1,4 @@
-<!-- Testimonial Wall – ported from affectUI (MIT). Columns of quotes drifting up and down, pause on hover, drag, keyboard focus. -->
+<!-- Testimonial Wall – Columns of quotes drifting up and down, pause on hover, drag, keyboard focus. -->
 <script lang="ts" module>
 	export type Testimonial = { quote: string; name: string; role?: string; company?: string; avatar?: string; rating?: number; verified?: boolean };
 	type ColState = { y: number; v: number; h: number; drag: null | { id: number; lastY: number; lastT: number; moved: number; captured: boolean }; seek: number };

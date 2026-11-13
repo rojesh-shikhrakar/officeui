@@ -1,0 +1,11 @@
+.ui-sdot { --ui-sdot: var(--aui-muted, rgba(0, 0, 0, 0.45)); display: inline-flex; align-items: center; gap: 8px; font: 500 13px/20px var(--aui-font, "Inter", ui-sans-serif, system-ui, sans-serif); color: var(--aui-ink, rgba(0, 0, 0, 0.88)); }
+.ui-sdot > i { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--ui-sdot); flex: none; }
+.ui-sdot--lg > i { width: 12px; height: 12px; }
+.ui-sdot--success { --ui-sdot: var(--aui-success, #1e8a4f); }
+.ui-sdot--danger { --ui-sdot: var(--aui-danger, #c4320a); }
+.ui-sdot--warning { --ui-sdot: var(--aui-warning, #d97706); }
+.ui-sdot--info { --ui-sdot: var(--aui-info, #4f8ff7); }
+.ui-sdot--accent { --ui-sdot: var(--aui-blue, #0060e2); }
+.ui-sdot.is-pulse > i::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: inherit; animation: ui-sdot-ping 1800ms ease infinite; }
+@keyframes ui-sdot-ping { 0% { transform: scale(1); opacity: 0.55; } 80%, 100% { transform: scale(2.6); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .ui-sdot.is-pulse > i::after { animation: none; } }

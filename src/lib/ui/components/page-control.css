@@ -1,0 +1,11 @@
+.ui-pgc { display: inline-flex; align-items: center; gap: 2px; color: var(--aui-ink, rgba(0, 0, 0, 0.88)); }
+.ui-pgc__dot { display: inline-flex; align-items: center; justify-content: center; height: 16px; min-width: 16px; padding: 0; border: 0; background: none; cursor: default; }
+button.ui-pgc__dot { cursor: pointer; border-radius: 999px; }
+button.ui-pgc__dot:focus-visible { outline: 2px solid var(--aui-focus, rgba(0, 96, 226, 0.7)); outline-offset: 1px; }
+.ui-pgc__dot span { display: block; width: 6px; height: 6px; border-radius: 999px; background: currentColor; opacity: 0.2; transition: width 160ms ease, opacity 120ms ease; }
+button.ui-pgc__dot:hover span { opacity: 0.45; }
+.ui-pgc__dot.is-on span { width: 18px; opacity: 0.88; }
+.ui-pgc--sm .ui-pgc__dot { height: 12px; min-width: 12px; } .ui-pgc--sm .ui-pgc__dot span { width: 5px; height: 5px; } .ui-pgc--sm .ui-pgc__dot.is-on span { width: 14px; }
+.ui-pgc--inverse { color: #fff; }
+.ui-pgc__sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .ui-pgc__dot span { transition: none; } }

@@ -84,7 +84,7 @@
 
 <div class="ui-ag ui-ag-panel ui-dtb" role="grid" tabindex="0" aria-label={title} onkeydown={keydown}>
 	<div class="ui-ag-head"><span style:color="var(--ag-blue)">▣</span><b>{title}</b><button class="ui-ag-btn" data-variant="ghost" aria-label="Undo" onclick={undo}>↶</button><button class="ui-ag-btn" data-variant="ghost" aria-label="Redo" onclick={redo}>↷</button></div>
-	<table>
+	<table role="grid">
 		<thead>
 			<tr>
 				<th class="ui-dtb__ck"><input type="checkbox" aria-label="Select all rows" checked={rows.every((r) => checked[r.id])} onchange={(e) => rows.forEach((r) => (checked[r.id] = e.currentTarget.checked))} /></th>

@@ -1,0 +1,22 @@
+.ui-rsz {
+  --ui-rsz-bg: var(--aui-surface, #fff);
+  --ui-rsz-line: var(--aui-border, rgba(0, 0, 0, 0.12));
+  --ui-rsz-fill: var(--aui-subtle, rgba(0, 0, 0, 0.04));
+  --ui-rsz-grip: rgba(0, 0, 0, 0.25);
+  --ui-rsz-focus: var(--aui-focus, rgba(0, 96, 226, 0.7));
+  display: grid; width: 100%; min-height: 0; border: 1px solid var(--ui-rsz-line); border-radius: var(--aui-radius-lg, 12px); background: var(--ui-rsz-bg); color: var(--aui-ink, inherit); overflow: hidden; font-family: var(--aui-font, ui-sans-serif, system-ui, sans-serif);
+}
+.ui-rsz__pane { min-width: 0; min-height: 0; overflow: auto; }
+.ui-rsz__handle { position: relative; display: flex; align-items: center; justify-content: center; background: var(--ui-rsz-fill); border-left: 1px solid var(--ui-rsz-line); border-right: 1px solid var(--ui-rsz-line); cursor: col-resize; touch-action: none; outline: none; transition: background-color 150ms ease; }
+.ui-rsz--v .ui-rsz__handle { border: 0; border-top: 1px solid var(--ui-rsz-line); border-bottom: 1px solid var(--ui-rsz-line); cursor: row-resize; }
+.ui-rsz__handle:hover, .ui-rsz__handle:focus-visible, .is-drag > .ui-rsz__handle { background: var(--ui-rsz-line); }
+.ui-rsz__handle:focus-visible { outline: 2px solid var(--ui-rsz-focus); outline-offset: -2px; }
+.ui-rsz__grip { width: 3px; height: 28px; border-radius: 2px; background: var(--ui-rsz-grip); }
+.ui-rsz--v .ui-rsz__grip { width: 28px; height: 3px; }
+@media (prefers-reduced-motion: reduce) { .ui-rsz__handle { transition: none; } }
+:where(.dark, [data-theme="dark"]) .ui-rsz {
+  --ui-rsz-bg: var(--aui-surface, #1c1c1f);
+  --ui-rsz-line: var(--aui-border, rgba(255, 255, 255, 0.14));
+  --ui-rsz-fill: var(--aui-subtle, rgba(255, 255, 255, 0.06));
+  --ui-rsz-grip: rgba(255, 255, 255, 0.35);
+}

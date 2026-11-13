@@ -1,4 +1,4 @@
-<!-- Region Map – ported from affectUI (MIT). A region map with fading neighbours and a pastel band travelling along the border; a pill menu morphs open to switch regions. -->
+<!-- Region Map – A region map with fading neighbours and a pastel band travelling along the border; a pill menu morphs open to switch regions. -->
 <script lang="ts" module>
 	import { MAPS, type Region } from './region-maps';
 	export type { Region };

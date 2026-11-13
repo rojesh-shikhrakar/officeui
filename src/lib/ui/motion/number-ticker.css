@@ -1,4 +1,4 @@
-/* Ported from affectUI (motion/number-ticker.tsx), MIT License (c) 2026 Florian Höller. */
+/* Based on motion/number-ticker.tsx. */
 
 .ui-nt {
   --ui-nt-lh: 1.15em;

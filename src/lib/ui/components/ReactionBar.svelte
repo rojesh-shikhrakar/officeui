@@ -1,4 +1,4 @@
-<!-- Reaction Bar – ported from affectUI (MIT). Like, comment, repost and share chips with rolling counts. -->
+<!-- Reaction Bar – Like, comment, repost and share chips with rolling counts. -->
 <script lang="ts" module>
 	export type ReactionKey = 'like' | 'comment' | 'repost' | 'share';
 	export type ReactionState = { count: number; active?: boolean };
