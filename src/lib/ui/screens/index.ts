@@ -29,6 +29,7 @@ export { default as OnboardingBrand } from './OnboardingBrand.svelte';
 export { default as OnboardingReady } from './OnboardingReady.svelte';
 export { default as OnboardingTone } from './OnboardingTone.svelte';
 export { default as OnboardingWebsite } from './OnboardingWebsite.svelte';
+export { default as Projects } from './Projects.svelte';
 export { default as SettingsBilling } from './SettingsBilling.svelte';
 export { default as SettingsGeneral } from './SettingsGeneral.svelte';
 export { default as SettingsMembers } from './SettingsMembers.svelte';
