@@ -42,9 +42,62 @@ jobs:
 
           # Optional: Give a custom prompt to Claude. If this is not specified, Claude will perform the instructions specified in the comment that tagged it.
           # prompt: 'Update the pull request description to include a summary of changes.'
+          prompt: |
+            **IMPORTANT - WHEN WORKING ON ISSUES:**
+            After you finish implementing the code changes and committing them, create a pull request:
+            ```
+            gh pr create --title "Your descriptive title" --body "## Summary
+            Your summary of what was implemented.
+             
+            Closes #${{ github.event.issue.number }}"
+            ```
+            Always include a summary of changes AND "Closes #${{ github.event.issue.number }}" in the body.
+             
+            **COMMIT RULES:**
+            - Do NOT add "Co-authored-by" lines to commits
+            - Do NOT add "Generated with Claude Code" or similar attributions
+            - Keep commits clean and professional
+          
+            **WHEN WORKING ON PR FEEDBACK:**
+            Make the requested changes and commit. The PR will automatically update - do NOT create a new PR.
+           
+            **WHEN FIXING CI FAILURES:**
+            Fix the issues, commit the fix. The CI will automatically re-run.
+           
+            **OUTPUT RULES:**
+          
+            ## Commit Message Requirements (max 72 chars)
+            - Use Convention Commits specification for commit messages. 
+            - Single line only
+            - NO co-author attributions
+
+          # Enable progress tracking
+          track_progress: true
+
 
           # Optional: Add claude_args to customize behavior and configuration
           # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
           # or https://code.claude.com/docs/en/cli-reference for available options
           # claude_args: '--allowed-tools Bash(gh pr *)'
 
+            # Clean up the comment - remove the malformed "Create PR" link and trailing artifacts
+      - name: Clean up Claude comment
+        if: github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          # Get the latest comment from Claude on this issue
+          COMMENT_ID=$(gh api repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments --jq '.[-1].id')
+
+          if [ -n "$COMMENT_ID" ]; then
+            # Get current comment body
+            BODY=$(gh api repos/${{ github.repository }}/issues/comments/$COMMENT_ID --jq '.body')
+
+            # Remove the "Create PR" link and any trailing pipe/whitespace
+            CLEANED=$(echo "$BODY" | sed 's/ • \[Create PR ➔\]([^)]*)//g' | sed 's/[[:space:]]*|[[:space:]]*$//')
+
+            # Update the comment
+            gh api repos/${{ github.repository }}/issues/comments/$COMMENT_ID \
+              -X PATCH \
+              -f body="$CLEANED"
+          fi
